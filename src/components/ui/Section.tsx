@@ -40,15 +40,15 @@ export function SectionKicker({
 }) {
   return (
     <Reveal
-      className={`mb-6 flex items-end gap-3 md:gap-4 ${
+      className={`mb-6 flex items-center gap-3 md:gap-4 ${
         center ? "justify-center" : ""
       }`}
     >
-      <span className="text-gradient font-display text-4xl leading-none font-bold md:text-5xl">
+      <span className="text-gradient font-display text-3xl leading-none font-bold md:text-4xl">
         {index}
       </span>
-      <span className="mb-1 h-px w-8 bg-gradient-to-r from-cyan/60 to-transparent md:w-14" />
-      <span className="mb-0.5 font-mono text-[11px] uppercase tracking-[0.3em] text-muted md:text-xs">
+      <span className="h-px w-8 bg-gradient-to-r from-cyan/60 to-transparent md:w-14" />
+      <span className="font-mono text-sm uppercase tracking-[0.3em] text-muted md:text-base">
         {label}
       </span>
     </Reveal>

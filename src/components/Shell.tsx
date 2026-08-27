@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { LanguageProvider } from "./providers/LanguageContext";
+import BackToTop from "./BackToTop";
 import CursorGlow from "./CursorGlow";
 import Intro from "./Intro";
 import Nav from "./Nav";
@@ -50,6 +51,7 @@ export default function Shell() {
         <Contact />
       </main>
       <Footer />
+      <BackToTop />
     </LanguageProvider>
   );
 }

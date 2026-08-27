@@ -14,7 +14,6 @@ export const ptBR: Dict = {
     journey: "Jornada",
     beyond: "Além do código",
     contact: "Contato",
-    open: "Aberto a propostas",
   },
   intro: {
     terminal: [
@@ -306,12 +305,12 @@ export const ptBR: Dict = {
     },
     cards: [
       {
-        name: "tests-nextjs-vitest-playwright",
-        type: "Estudo · Testes",
-        repo: "tests",
-        desc: "Prática de testes num setup Next.js — unitários e end-to-end.",
-        tech: ["Next.js", "TypeScript", "Vitest", "Playwright"],
-        points: ["Testes unitários", "Testes E2E", "Workflow de QA"],
+        name: "Instagram-UFRN",
+        type: "Acadêmico · Mobile",
+        repo: "instagramUFRN",
+        desc: "Aplicativo mobile acadêmico em React Native inspirado na interface do Instagram, criado em uma disciplina da universidade — com integração de banco de dados e arquitetura mobile completa.",
+        tech: ["React Native", "JavaScript", "Banco de dados"],
+        points: ["UI estilo Instagram", "Integração com banco de dados", "Navegação mobile"],
       },
       {
         name: "Gmail-RN",
@@ -515,7 +514,6 @@ export const ptBR: Dict = {
       { icon: "github", label: "GitHub", value: "@LenilsonSillva", href: "https://github.com/LenilsonSillva" },
       { icon: "linkedin", label: "LinkedIn", value: "in/lenilson-sillva", href: "https://www.linkedin.com/in/lenilson-sillva/" },
       { icon: "instagram", label: "Instagram", value: "@lenilson.sillva", href: "https://instagram.com/lenilson.sillva" },
-      { icon: "facebook", label: "Facebook", value: "/lenilson.sillva", href: "https://facebook.com/lenilson.sillva" },
     ],
   },
   footer: {

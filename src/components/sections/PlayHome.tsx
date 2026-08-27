@@ -320,6 +320,15 @@ export default function PlayHome() {
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent" />
+                  <div className="absolute left-4 top-4 z-10 flex h-14 w-14 items-center justify-center rounded-2xl border border-white/15 bg-ink/70 shadow-lg shadow-black/40 backdrop-blur-md">
+                    <Image
+                      src="/images/playhome-icon.png"
+                      alt="PlayHome"
+                      width={40}
+                      height={40}
+                      className="h-10 w-10"
+                    />
+                  </div>
                   {p.badges.map((b, i) => (
                     <motion.span
                       key={b}

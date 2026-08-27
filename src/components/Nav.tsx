@@ -67,7 +67,7 @@ export default function Nav() {
       >
         <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-2 px-4 md:h-[72px] md:px-8">
           <a href="#home" className="font-display text-xl font-bold tracking-tight text-paper">
-            LS<span className="text-cyan">.</span>
+            LSO<span className="text-cyan">.</span>
           </a>
 
           <ul className="hidden items-center gap-6 text-sm text-muted lg:flex">
@@ -82,13 +82,6 @@ export default function Nav() {
 
           <div className="flex items-center gap-2 md:gap-3">
             <LangToggle compact />
-            <a
-              href="#contact"
-              className="hidden items-center gap-2 rounded-full border border-line px-4 py-2 text-sm text-paper/90 transition-all hover:border-cyan/60 hover:bg-cyan/5 xl:inline-flex"
-            >
-              <span className="animate-pulse-dot h-1.5 w-1.5 rounded-full bg-emerald-400" />
-              {t.nav.open}
-            </a>
             <button
               aria-label="Open menu"
               onClick={() => setOpen(true)}
@@ -118,7 +111,7 @@ export default function Nav() {
             <div className="relative flex h-full flex-col justify-between px-6 pb-10 pt-6">
               <div className="flex items-center justify-between">
                 <span className="font-display text-xl font-bold text-paper">
-                  LS<span className="text-cyan">.</span>
+                  LSO<span className="text-cyan">.</span>
                 </span>
                 <button
                   aria-label="Close menu"

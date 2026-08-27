@@ -21,7 +21,7 @@ export const links = {
 export const repos: Record<string, string> = {
   filie: "https://github.com/LenilsonSillva/filie",
   denuncias: "https://github.com/LenilsonSillva/denuncias",
-  tests: "https://github.com/LenilsonSillva/tests-nextjs-vitest-playwright",
+  instagramUFRN: "https://github.com/LenilsonSillva/Instagram-UFRN",
   gmailRN: "https://github.com/LenilsonSillva/Gmail-RN",
   marcadores: "https://github.com/LenilsonSillva/Marcadores",
 };

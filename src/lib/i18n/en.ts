@@ -12,7 +12,6 @@ export const en = {
     journey: "Journey",
     beyond: "Beyond",
     contact: "Contact",
-    open: "Open to work",
   },
   intro: {
     terminal: [
@@ -304,12 +303,12 @@ export const en = {
     },
     cards: [
       {
-        name: "tests-nextjs-vitest-playwright",
-        type: "Study · Testing",
-        repo: "tests",
-        desc: "Testing practice on a Next.js setup — unit and end-to-end.",
-        tech: ["Next.js", "TypeScript", "Vitest", "Playwright"],
-        points: ["Unit tests", "E2E tests", "QA workflow"],
+        name: "Instagram-UFRN",
+        type: "Academic · Mobile",
+        repo: "instagramUFRN",
+        desc: "Academic React Native app inspired by the Instagram interface, built in a university course — with database integration and a complete mobile architecture.",
+        tech: ["React Native", "JavaScript", "Database"],
+        points: ["Instagram-like UI", "Database integration", "Mobile navigation"],
       },
       {
         name: "Gmail-RN",
@@ -524,7 +523,6 @@ export const en = {
       { icon: "github", label: "GitHub", value: "@LenilsonSillva", href: "https://github.com/LenilsonSillva" },
       { icon: "linkedin", label: "LinkedIn", value: "in/lenilson-sillva", href: "https://www.linkedin.com/in/lenilson-sillva/" },
       { icon: "instagram", label: "Instagram", value: "@lenilson.sillva", href: "https://instagram.com/lenilson.sillva" },
-      { icon: "facebook", label: "Facebook", value: "/lenilson.sillva", href: "https://facebook.com/lenilson.sillva" },
     ],
   },
   footer: {

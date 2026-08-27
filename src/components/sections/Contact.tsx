@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useLang } from "../providers/LanguageContext";
-import { Reveal, SectionKicker, SectionTitle } from "../ui/Section";
+import { Reveal, SectionKicker } from "../ui/Section";
 import { Magnetic } from "../ui/Magnetic";
 import { Icon, type IconName } from "../ui/Icons";
 import { links } from "@/lib/data";
@@ -18,31 +18,37 @@ export default function Contact() {
         aria-hidden
         className="absolute top-1/2 left-1/2 h-[420px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet/15 blur-[140px]"
       />
-      <div className="relative mx-auto max-w-5xl px-5 text-center md:px-8">
-        <SectionKicker index={c.index} label={c.kicker} center />
+      <div className="relative mx-auto max-w-6xl px-5 md:px-8">
+        <SectionKicker index={c.index} label={c.kicker} />
 
-        <div className="flex justify-center">
-          <div className="w-full">
-            <SectionTitle title={c.titleA} />
-            <div className="overflow-hidden">
-              <motion.h2
-                initial={{ y: "110%" }}
-                whileInView={{ y: "0%" }}
-                viewport={{ once: true, margin: "-70px" }}
-                transition={{ duration: 0.9, delay: 0.12, ease: EASE }}
-                className="text-gradient font-display text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
-              >
-                {c.titleB}
-              </motion.h2>
-            </div>
-          </div>
+        <div className="overflow-hidden">
+          <motion.h2
+            initial={{ y: "110%" }}
+            whileInView={{ y: "0%" }}
+            viewport={{ once: true, margin: "-70px" }}
+            transition={{ duration: 0.9, ease: EASE }}
+            className="font-display text-4xl font-bold tracking-tight text-paper md:text-5xl lg:text-6xl"
+          >
+            {c.titleA}
+          </motion.h2>
+        </div>
+        <div className="overflow-hidden">
+          <motion.h2
+            initial={{ y: "110%" }}
+            whileInView={{ y: "0%" }}
+            viewport={{ once: true, margin: "-70px" }}
+            transition={{ duration: 0.9, delay: 0.12, ease: EASE }}
+            className="text-gradient font-display text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
+          >
+            {c.titleB}
+          </motion.h2>
         </div>
 
         <Reveal delay={0.1}>
-          <p className="mx-auto mt-7 max-w-xl text-lg text-muted italic">“{c.quote}”</p>
+          <p className="mt-7 max-w-xl text-lg text-muted italic">“{c.quote}”</p>
         </Reveal>
 
-        <Reveal delay={0.16} className="mt-10 flex flex-wrap justify-center gap-4">
+        <Reveal delay={0.16} className="mt-10 flex flex-wrap gap-4">
           <Magnetic>
             <a
               href={links.email}
@@ -63,7 +69,7 @@ export default function Contact() {
           </Magnetic>
         </Reveal>
 
-        <div className="mt-14 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {c.items.map((it, i) => (
             <Reveal key={it.label} delay={i * 0.05}>
               <a

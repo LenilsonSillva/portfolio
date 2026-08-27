@@ -33,7 +33,7 @@ export default function Footer() {
         <div className="flex flex-col justify-between gap-10 md:flex-row md:items-start">
           <div>
             <a href="#home" className="font-display text-2xl font-bold text-paper">
-              LS<span className="text-cyan">.</span>
+              LSO<span className="text-cyan">.</span>
             </a>
             <p className="mt-2 font-semibold text-paper">{t.meta.name}</p>
             <p className="text-sm text-muted">
@@ -42,12 +42,12 @@ export default function Footer() {
             <p className="mt-3 font-mono text-xs text-muted/80">{f.stack}</p>
           </div>
 
-          <div className="flex gap-14">
+          <div className="flex flex-col gap-8 md:flex-row md:items-start md:gap-14">
             <nav>
               <p className="mb-3 font-mono text-[10px] tracking-[0.3em] text-muted uppercase">
                 {f.nav}
               </p>
-              <ul className="space-y-2 text-sm">
+              <ul className="flex flex-wrap gap-x-5 gap-y-2 text-sm md:flex-col md:gap-x-0 md:gap-y-2">
                 {navItems.map((it) => (
                   <li key={it.id}>
                     <a
@@ -65,7 +65,7 @@ export default function Footer() {
               <p className="mb-3 font-mono text-[10px] tracking-[0.3em] text-muted uppercase">
                 {f.social}
               </p>
-              <div className="flex flex-col gap-2.5">
+              <div className="flex flex-row gap-3 md:flex-col md:gap-2.5">
                 {socials.map((s) => (
                   <a
                     key={s.name}
