@@ -10,7 +10,7 @@ export default function Journey() {
   const j = t.journey;
 
   return (
-    <section id="journey" className="relative py-24 md:py-32">
+    <section id="journey" className="relative overflow-hidden py-24 md:py-32">
       <div
         aria-hidden
         className="absolute top-1/4 left-[-12%] h-[400px] w-[400px] rounded-full bg-violet/10 blur-[130px]"

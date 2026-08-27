@@ -27,7 +27,7 @@ export default function PlayHome() {
       />
       <div className="relative mx-auto max-w-6xl px-5 md:px-8">
         {/* Header: 03 — FEATURED PROJECT */}
-        <SectionKicker index={p.index} label={p.kicker} />
+        <SectionKicker index={p.index} label={p.kicker} className="mb-6 md:mb-8" />
 
         {/* Icon + PLAYHOME */}
         <div className="flex flex-wrap items-center gap-5 md:gap-7">
@@ -83,7 +83,9 @@ export default function PlayHome() {
           {/* left: lead + tabs */}
           <div>
             <Reveal>
-              <p className="text-lg leading-relaxed text-paper/90 md:text-xl">{p.lead}</p>
+              <p className="text-center text-lg leading-relaxed text-paper/90 md:text-left md:text-xl">
+                {p.lead}
+              </p>
             </Reveal>
 
             <div className="mt-8 flex flex-wrap gap-2">
@@ -113,7 +115,7 @@ export default function PlayHome() {
                 >
                   {tab === "overview" && (
                     <div>
-                      <p className="text-base leading-relaxed text-paper/85">
+                      <p className="text-center text-base leading-relaxed text-paper/85 md:text-left">
                         {p.overview.body}
                       </p>
                       <div className="mt-6 grid gap-2.5 sm:grid-cols-2">
@@ -132,7 +134,7 @@ export default function PlayHome() {
 
                   {tab === "realtime" && (
                     <div>
-                      <p className="text-base leading-relaxed text-paper/85">
+                      <p className="text-center text-base leading-relaxed text-paper/85 md:text-left">
                         {p.realtime.body}
                       </p>
                       <div className="my-6 flex flex-wrap items-center gap-2 font-mono text-xs">
@@ -205,7 +207,9 @@ export default function PlayHome() {
 
                   {tab === "i18n" && (
                     <div>
-                      <p className="text-base leading-relaxed text-paper/85">{p.i18n.body}</p>
+                      <p className="text-center text-base leading-relaxed text-paper/85 md:text-left">
+                        {p.i18n.body}
+                      </p>
                       <div className="mt-5 flex flex-wrap gap-2">
                         <span className="rounded-full border border-transparent bg-gradient-to-r from-violet to-cyan px-4 py-1.5 text-sm font-semibold text-[#05060b]">
                           {p.i18n.total}
@@ -225,7 +229,7 @@ export default function PlayHome() {
 
                   {tab === "monetization" && (
                     <div>
-                      <p className="text-base leading-relaxed text-paper/85">
+                      <p className="text-center text-base leading-relaxed text-paper/85 md:text-left">
                         {p.monetization.body}
                       </p>
                       <div className="mt-5 grid gap-3 sm:grid-cols-2">
@@ -249,7 +253,7 @@ export default function PlayHome() {
 
                   {tab === "release" && (
                     <div>
-                      <p className="text-base leading-relaxed text-paper/85">
+                      <p className="text-center text-base leading-relaxed text-paper/85 md:text-left">
                         {p.release.body}
                       </p>
                       <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
@@ -266,7 +270,7 @@ export default function PlayHome() {
             </div>
 
             <Reveal delay={0.05}>
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-8 flex flex-wrap justify-center gap-3">
                 <a
                   href={links.playStore}
                   target="_blank"

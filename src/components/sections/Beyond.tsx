@@ -9,7 +9,7 @@ export default function Beyond() {
   const b = t.beyond;
 
   return (
-    <section id="beyond" className="relative py-24 md:py-32">
+    <section id="beyond" className="relative overflow-hidden py-24 md:py-32">
       <div
         aria-hidden
         className="absolute top-1/3 left-[-15%] h-[420px] w-[420px] rounded-full bg-violet/10 blur-[130px]"

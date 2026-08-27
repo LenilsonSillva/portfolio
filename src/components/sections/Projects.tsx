@@ -11,7 +11,7 @@ export default function Projects() {
   const u = pr.umesppb;
 
   return (
-    <section id="projects" className="relative py-24 md:py-32">
+    <section id="projects" className="relative overflow-hidden py-24 md:py-32">
       <div
         aria-hidden
         className="absolute top-0 right-[-12%] h-[380px] w-[380px] rounded-full bg-cyan/10 blur-[130px]"

@@ -21,55 +21,59 @@ export default function Contact() {
       <div className="relative mx-auto max-w-6xl px-5 md:px-8">
         <SectionKicker index={c.index} label={c.kicker} />
 
-        <div className="overflow-hidden">
-          <motion.h2
-            initial={{ y: "110%" }}
-            whileInView={{ y: "0%" }}
-            viewport={{ once: true, margin: "-70px" }}
-            transition={{ duration: 0.9, ease: EASE }}
-            className="font-display text-4xl font-bold tracking-tight text-paper md:text-5xl lg:text-6xl"
-          >
-            {c.titleA}
-          </motion.h2>
-        </div>
-        <div className="overflow-hidden">
-          <motion.h2
-            initial={{ y: "110%" }}
-            whileInView={{ y: "0%" }}
-            viewport={{ once: true, margin: "-70px" }}
-            transition={{ duration: 0.9, delay: 0.12, ease: EASE }}
-            className="text-gradient font-display text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
-          >
-            {c.titleB}
-          </motion.h2>
-        </div>
-
-        <Reveal delay={0.1}>
-          <p className="mt-7 max-w-xl text-lg text-muted italic">“{c.quote}”</p>
-        </Reveal>
-
-        <Reveal delay={0.16} className="mt-10 flex flex-wrap gap-4">
-          <Magnetic>
-            <a
-              href={links.email}
-              className="inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-violet to-cyan px-8 py-4 font-semibold text-[#05060b]"
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="overflow-hidden">
+            <motion.h2
+              initial={{ y: "110%" }}
+              whileInView={{ y: "0%" }}
+              viewport={{ once: true, margin: "-70px" }}
+              transition={{ duration: 0.9, ease: EASE }}
+              className="font-display text-4xl font-bold tracking-tight text-paper md:text-5xl lg:text-6xl"
             >
-              <Icon name="mail" className="h-5 w-5" /> {c.emailCta}
-            </a>
-          </Magnetic>
-          <Magnetic>
-            <a
-              href={links.whatsapp}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2.5 rounded-full border border-line px-8 py-4 font-medium text-paper/90 transition-colors hover:border-cyan/60 hover:bg-cyan/5"
+              {c.titleA}
+            </motion.h2>
+          </div>
+          <div className="overflow-hidden">
+            <motion.h2
+              initial={{ y: "110%" }}
+              whileInView={{ y: "0%" }}
+              viewport={{ once: true, margin: "-70px" }}
+              transition={{ duration: 0.9, delay: 0.12, ease: EASE }}
+              className="text-gradient font-display text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
             >
-              <Icon name="chat" className="h-5 w-5 text-cyan" /> WhatsApp
-            </a>
-          </Magnetic>
-        </Reveal>
+              {c.titleB}
+            </motion.h2>
+          </div>
 
-        <div className="mt-14 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <Reveal delay={0.1}>
+            <p className="mx-auto mt-7 max-w-xl text-lg text-muted italic">
+              “{c.quote}”
+            </p>
+          </Reveal>
+
+          <Reveal delay={0.16} className="mt-10 flex flex-wrap justify-center gap-4">
+            <Magnetic>
+              <a
+                href={links.email}
+                className="inline-flex items-center gap-2.5 rounded-full bg-gradient-to-r from-violet to-cyan px-8 py-4 font-semibold text-[#05060b]"
+              >
+                <Icon name="mail" className="h-5 w-5" /> {c.emailCta}
+              </a>
+            </Magnetic>
+            <Magnetic>
+              <a
+                href={links.whatsapp}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2.5 rounded-full border border-line px-8 py-4 font-medium text-paper/90 transition-colors hover:border-cyan/60 hover:bg-cyan/5"
+              >
+                <Icon name="chat" className="h-5 w-5 text-cyan" /> WhatsApp
+              </a>
+            </Magnetic>
+          </Reveal>
+        </div>
+
+        <div className="mx-auto mt-14 grid max-w-4xl gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {c.items.map((it, i) => (
             <Reveal key={it.label} delay={i * 0.05}>
               <a

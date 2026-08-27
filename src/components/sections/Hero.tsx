@@ -80,7 +80,10 @@ export default function Hero({ introDone }: { introDone: boolean }) {
           {t.hero.body}
         </motion.p>
 
-        <motion.div variants={item} className="mt-9 flex flex-wrap items-center gap-4">
+        <motion.div
+          variants={item}
+          className="mt-9 flex flex-wrap items-center justify-center gap-4 md:justify-start"
+        >
           <Magnetic>
             <a
               href="#playhome"
@@ -102,7 +105,7 @@ export default function Hero({ introDone }: { introDone: boolean }) {
 
         <motion.p
           variants={item}
-          className="mt-8 font-mono text-xs uppercase tracking-[0.25em] text-muted"
+          className="mt-8 text-center font-mono text-xs uppercase tracking-[0.25em] text-muted md:text-left"
         >
           {t.hero.workModel}
         </motion.p>

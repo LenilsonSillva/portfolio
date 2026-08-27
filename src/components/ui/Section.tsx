@@ -33,16 +33,18 @@ export function SectionKicker({
   index,
   label,
   center = false,
+  className = "",
 }: {
   index: string;
   label: string;
   center?: boolean;
+  className?: string;
 }) {
   return (
     <Reveal
-      className={`mb-6 flex items-center gap-3 md:gap-4 ${
+      className={`mb-4 flex items-center gap-3 md:gap-4 ${
         center ? "justify-center" : ""
-      }`}
+      } ${className}`}
     >
       <span className="text-gradient font-display text-3xl leading-none font-bold md:text-4xl">
         {index}

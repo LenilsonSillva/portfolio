@@ -53,13 +53,13 @@ export default function About() {
           <div className="lg:col-span-7">
             <div className="space-y-5 text-base leading-relaxed md:text-lg">
               <Reveal>
-                <p className="text-paper/90">{a.p1}</p>
+                <p className="text-center text-paper/90 md:text-left">{a.p1}</p>
               </Reveal>
               <Reveal delay={0.08}>
-                <p className="text-muted">{a.p2}</p>
+                <p className="text-center text-muted md:text-left">{a.p2}</p>
               </Reveal>
               <Reveal delay={0.12}>
-                <p className="text-muted">{a.p3}</p>
+                <p className="text-center text-muted md:text-left">{a.p3}</p>
               </Reveal>
             </div>
 
