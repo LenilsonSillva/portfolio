@@ -1,6 +1,6 @@
 import type { Dict } from "./index";
 
-export const ptPT: Dict = {
+export const ptBR: Dict = {
   meta: {
     name: "Lenilson Silva",
     role: "Full Stack & Mobile Developer",
@@ -13,7 +13,7 @@ export const ptPT: Dict = {
     experience: "Experiência",
     journey: "Jornada",
     beyond: "Além do código",
-    contact: "Contacto",
+    contact: "Contato",
     open: "Aberto a propostas",
   },
   intro: {
@@ -23,11 +23,11 @@ export const ptPT: Dict = {
       "$ stack --list",
       "react · next.js · typescript · react-native · node.js",
       "$ deploy --env produção",
-      "a construir coisas que as pessoas possam usar...",
+      "construindo coisas que as pessoas possam usar...",
     ],
     name: "LENILSON OLIVEIRA",
     role: "Full Stack & Mobile Developer",
-    skip: "clica em qualquer lado para saltar",
+    skip: "clique em qualquer lugar para pular",
   },
   hero: {
     titleA: "Full Stack &",
@@ -35,7 +35,7 @@ export const ptPT: Dict = {
     sub: "Transformando ideias em aplicações reais — do conceito ao produto publicado.",
     body: "Sou desenvolvedor Full Stack e Mobile, com percurso autodidata e experiência prática na criação de aplicações Web e Mobile — incluindo sistemas multiplayer em tempo real. Trabalho principalmente com React, React Native, TypeScript, Next.js e Node.js, cobrindo frontend, backend, APIs, persistência, autenticação, internacionalização, testes, deployment e publicação.",
     ctaProjects: "Ver projetos",
-    ctaContact: "Fala comigo",
+    ctaContact: "Fale comigo",
     available: "Aberto a oportunidades",
     workModel: "Presencial · Híbrido · Remoto",
     location: "Porto, Portugal",
@@ -59,9 +59,9 @@ export const ptPT: Dict = {
     index: "01",
     label: "Sobre",
     title: "Autodidata, orientado a projetos",
-    p1: "O meu interesse por tecnologia começou com os estudos de programação e foi crescendo à medida que transformei ideias em projetos próprios.",
-    p2: "Durante os estudos na Universidade Federal do Rio Grande do Norte (UFRN) tive contacto com lógica de programação, JavaScript, C++, programação orientada a objetos, desenvolvimento mobile e React Native. Não concluí a licenciatura — continuei de forma autodidata, passando de pequenos experimentos a aplicações completas: frontend, backend, bases de dados, APIs, comunicação em tempo real, autenticação, internacionalização, monetização e publicação.",
-    p3: "Vivo agora em Portugal e estou a direcionar a minha carreira para o desenvolvimento de software, à procura da minha primeira oportunidade profissional na área.",
+    p1: "Meu interesse por tecnologia começou com os estudos de programação e foi crescendo à medida que transformei ideias em projetos próprios.",
+    p2: "Durante os estudos na Universidade Federal do Rio Grande do Norte (UFRN) tive contato com lógica de programação, JavaScript, C++, programação orientada a objetos, desenvolvimento mobile e React Native. Não concluí a graduação — continuei de forma autodidata, passando de pequenos experimentos a aplicações completas: frontend, backend, bancos de dados, APIs, comunicação em tempo real, autenticação, internacionalização, monetização e publicação.",
+    p3: "Vivo agora em Portugal e estou direcionando minha carreira para o desenvolvimento de software, procurando minha primeira oportunidade profissional na área.",
     quote: "Construo para aprender — aprendo para construir melhor.",
     workTitle: "Como eu trabalho",
     work: [
@@ -71,11 +71,11 @@ export const ptPT: Dict = {
       },
       {
         title: "Aprendizagem prática",
-        text: "Quando quero aprender uma tecnologia, procuro entender como ela funciona — e utilizá-la em projetos reais.",
+        text: "Quando quero aprender uma tecnologia, procuro entender como ela funciona — e usá-la em projetos reais.",
       },
       {
         title: "Mentalidade full stack",
-        text: "Interesso-me pelo fluxo completo de uma aplicação: da interface ao backend, à base de dados e à infraestrutura.",
+        text: "Interesso-me pelo fluxo completo de uma aplicação: da interface ao backend, ao banco de dados e à infraestrutura.",
       },
       {
         title: "Aprendizagem contínua",
@@ -109,7 +109,7 @@ export const ptPT: Dict = {
         items: ["Node.js", "Express.js", "NestJS", "REST APIs", "WebSockets", "Socket.IO"],
       },
       {
-        name: "Base de dados",
+        name: "Banco de dados",
         items: ["MySQL", "Prisma", "Firebase", "AsyncStorage"],
       },
       {
@@ -139,7 +139,7 @@ export const ptPT: Dict = {
         ],
       },
     ],
-    note: "A aprender — Advanced React, Next.js 15 & NestJS 11 (Udemy, em andamento)",
+    note: "Aprendendo — Advanced React, Next.js 15 & NestJS 11 (Udemy, em andamento)",
     noteLink: "Ver curso",
   },
   playhome: {
@@ -177,13 +177,13 @@ export const ptPT: Dict = {
     realtime: {
       body: "Um dos principais desafios técnicos foi sincronizar vários jogadores ao mesmo tempo — com estado consistente em todos os clientes.",
       flow: ["React Native", "Socket.IO", "Node.js", "WebSockets"],
-      deployNote: "Backend a correr no Render",
+      deployNote: "Backend rodando no Render",
       items: [
-        "Criação e gestão de salas",
+        "Criação e gerenciamento de salas",
         "Entrada e saída de jogadores",
         "Sincronização de estados",
         "Eventos em tempo real",
-        "Gestão de lobby",
+        "Gerenciamento de lobby",
         "Sincronização de rodadas",
         "Ciclo de vida das partidas",
         "Comunicação cliente-servidor",
@@ -211,7 +211,7 @@ export const ptPT: Dict = {
           { name: "Infiltração — Blitz", desc: "Usa dicas para fazer os outros descobrirem a palavra." },
           {
             name: "Intercepção — Duelo",
-            desc: "Modo competitivo baseado na disputa direta entre jogadores ou equipas.",
+            desc: "Modo competitivo baseado na disputa direta entre jogadores ou equipes.",
           },
         ],
         features: [
@@ -227,13 +227,13 @@ export const ptPT: Dict = {
       },
     },
     i18n: {
-      body: "Traduzido para mais de 10 idiomas, para que jogadores de diferentes regiões usem a aplicação na sua própria língua.",
+      body: "Traduzido para mais de 10 idiomas, para que jogadores de diferentes regiões usem o aplicativo na sua própria língua.",
       total: "10+ idiomas",
       languages: ["Português (BR)", "Português (PT)", "Inglês", "Espanhol"],
       note: "Sistema de traduções com chaves i18n, categorias e textos traduzidos, incluindo as diferenças entre pt-BR e pt-PT.",
     },
     monetization: {
-      body: "Experimentação real com modelos de monetização para aplicações mobile — não uma demonstração, uma preocupação de produto.",
+      body: "Experimentação real com modelos de monetização para aplicativos mobile — não uma demonstração, uma preocupação de produto.",
       items: [
         { name: "Google AdMob", desc: "Anúncios intersticiais e recompensados" },
         { name: "RevenueCat", desc: "Compras, assinaturas e plano premium" },
@@ -267,7 +267,7 @@ export const ptPT: Dict = {
       codeBackend: "Código — Backend",
     },
     privacyNote:
-      "O código-fonte do React Native é privado — a aplicação está publicamente disponível na Google Play.",
+      "O código-fonte do React Native é privado — o aplicativo está publicamente disponível na Google Play.",
   },
   projects: {
     index: "04",
@@ -276,18 +276,18 @@ export const ptPT: Dict = {
     umesppb: {
       name: "UMESPPB",
       tag: "Projeto para cliente",
-      title: "Sistema de cadastro e gestão de polícias civis",
-      desc: "Um sistema web desenvolvido para um cliente com o objetivo de facilitar o cadastro e a gestão de informações de polícias civis. Os polícias realizavam a sua filiação através de um formulário estruturado, e a plataforma disponibilizava também um sistema de registo de denúncias, permitindo enviar informações relacionadas com ocorrências que precisavam de ser reportadas.",
+      title: "Sistema de Cadastro e Gestão de Policiais Civis",
+      desc: "Sistema web desenvolvido para um cliente com o objetivo de facilitar o cadastro e a gestão de informações de policiais civis. Os policiais realizavam sua filiação fornecendo seus dados através de um formulário estruturado, e a plataforma também disponibilizava um sistema de registro de denúncias, permitindo que os usuários enviassem informações relacionadas a ocorrências ou situações que precisavam de ser reportadas.",
       status: "Concluído · aplicação atualmente indisponível",
       featuresTitle: "Principais funcionalidades",
       features: [
-        "Cadastro e filiação de polícias civis",
-        "Coleta e gestão de dados cadastrais",
-        "Formulários estruturados e validação de dados",
-        "Registo e envio de denúncias",
-        "Gestão das informações enviadas",
+        "Cadastro e filiação de policiais civis",
+        "Coleta e gerenciamento de dados cadastrais",
+        "Formulários estruturados e validação de informações",
+        "Registro e envio de denúncias",
+        "Gerenciamento das informações enviadas",
         "Comunicação entre frontend e backend",
-        "Persistência de dados em base de dados",
+        "Persistência de dados em banco de dados",
         "API para processamento das informações",
       ],
       techTitle: "Tecnologias",
@@ -297,7 +297,7 @@ export const ptPT: Dict = {
         database: ["MySQL", "Prisma"],
       },
       context:
-        "Desenvolvido para utilização real — o sistema chegou a ser utilizado para o cadastro de polícias e o recebimento de denúncias. A aplicação provavelmente já não está disponível online, mas parte do código permanece no GitHub para demonstração da experiência técnica adquirida.",
+        "Desenvolvido para utilização real — o sistema chegou a ser utilizado para o cadastro de policiais e recebimento de denúncias. Atualmente a aplicação provavelmente não está mais disponível online, mas parte do código do projeto permanece no GitHub para demonstração da experiência técnica adquirida durante seu desenvolvimento.",
       partsNote: "Partes da codebase no GitHub",
       parts: [
         { name: "Filie", repo: "filie" },
@@ -317,15 +317,15 @@ export const ptPT: Dict = {
         name: "Gmail-RN",
         type: "Estudo · Mobile",
         repo: "gmailRN",
-        desc: "Aplicação mobile inspirada na interface do Gmail, construída em React Native.",
+        desc: "Aplicativo mobile inspirado na interface do Gmail, construído em React Native.",
         tech: ["React Native"],
         points: ["UI mobile", "Padrões de inbox"],
       },
       {
         name: "Marcadores",
-        type: "Académico · Mapas",
+        type: "Acadêmico · Mapas",
         repo: "marcadores",
-        desc: "Projeto académico: mostrar e inserir marcadores num mapa.",
+        desc: "Projeto acadêmico: mostrar e inserir marcadores em um mapa.",
         tech: ["JavaScript", "Maps API"],
         points: ["Integração de mapas", "Funções geo"],
       },
@@ -345,7 +345,7 @@ export const ptPT: Dict = {
       org: "Por conta própria",
       place: "Porto, Portugal",
       period: "Em curso",
-      desc: "Em paralelo ao trabalho profissional, desenvolvo aplicações e projetos próprios para estudar tecnologias, resolver problemas e transformar ideias em produtos funcionais.",
+      desc: "Em paralelo ao meu trabalho profissional, desenvolvo aplicações e projetos próprios para estudar tecnologias, resolver problemas e transformar ideias em produtos funcionais.",
       areas: ["Web", "Mobile", "Full Stack", "Backend", "Realtime", "Game Dev", "APIs", "UI/UX", "Testes", "Deployment"],
     },
     highlight:
@@ -359,7 +359,7 @@ export const ptPT: Dict = {
     ufrn: {
       school: "Universidade Federal do Rio Grande do Norte — UFRN",
       place: "Brasil",
-      period: "Estudos de licenciatura",
+      period: "Graduação",
       desc: "Estudos na área de Tecnologia e Computação.",
       subjects: [
         "Lógica de programação",
@@ -370,13 +370,13 @@ export const ptPT: Dict = {
         "Desenvolvimento mobile",
         "React Native",
       ],
-      status: "Disciplinas principais estudadas · continuei o percurso de forma autodidata",
+      status: "Disciplinas principais estudadas · continuei minha formação de forma autodidata",
     },
     udemy: {
       school: "Advanced React / Next.js / NestJS — Full Stack",
       org: "Udemy",
       period: "Em andamento",
-      badge: "A aprender",
+      badge: "Aprendendo",
       desc: "Curso avançado de desenvolvimento full stack: React 19, Next.js 15, NestJS 11, TypeScript, Tailwind CSS, JWT, testes e deployment.",
       subjects: [
         "React 19",
@@ -422,7 +422,7 @@ export const ptPT: Dict = {
       {
         icon: "🇵🇹",
         title: "Portugal",
-        text: "Mudança para Portugal e continuidade do crescimento como developer a tempo inteiro.",
+        text: "Mudança para Portugal e continuidade do crescimento como developer em tempo integral.",
       },
       {
         icon: "🎮",
@@ -432,12 +432,12 @@ export const ptPT: Dict = {
       {
         icon: "📚",
         title: "Formação Full Stack",
-        text: "A aprofundar React, Next.js, NestJS, TypeScript, testes, autenticação, Linux, deployment e arquitetura full stack.",
+        text: "Aprofundando React, Next.js, NestJS, TypeScript, testes, autenticação, Linux, deployment e arquitetura full stack.",
       },
       {
         icon: "🎯",
         title: "Próximo objetivo",
-        text: "A minha primeira oportunidade profissional como Software / Full Stack Developer.",
+        text: "Minha primeira oportunidade profissional como Software / Full Stack Developer.",
       },
     ],
   },
@@ -447,12 +447,12 @@ export const ptPT: Dict = {
     title: "Além do código",
     sub: "Beyond Code",
     intro:
-      "Programar é uma das minhas principais formas de criar — mas a minha curiosidade não termina no código. Fora da tecnologia, a música ocupa um lugar importante na minha vida: gosto de tocar instrumentos, explorar diferentes sonoridades e experimentar novas possibilidades através da produção musical.",
+      "Programar é uma das minhas principais formas de criar — mas minha curiosidade não termina no código. Fora da tecnologia, a música ocupa um lugar importante na minha vida: gosto de tocar instrumentos, explorar diferentes sonoridades e experimentar novas possibilidades através da produção musical.",
     intro2:
-      "Essa relação entre música e tecnologia levou-me também a explorar MIDI, instrumentos virtuais, controladores e produção digital — a combinar criatividade com ferramentas tecnológicas.",
+      "Essa relação entre música e tecnologia também me levou a explorar MIDI, instrumentos virtuais, controladores e produção digital, combinando criatividade com ferramentas tecnológicas.",
     music: {
       title: "Música",
-      text: "Tenho contacto com diferentes instrumentos e gosto de explorar tanto a execução como os aspetos técnicos da produção musical.",
+      text: "Tenho contato com diferentes instrumentos e gosto de explorar tanto a execução quanto os aspectos técnicos da produção musical.",
       instrumentsTitle: "Instrumentos",
       instruments: ["🎹 Teclado", "🪕 Violão", "🎸 Guitarra"],
       techTitle: "Produção & tecnologia musical",
@@ -465,7 +465,7 @@ export const ptPT: Dict = {
         "Produção musical",
         "Controladores MIDI",
       ],
-      setupTitle: "O meu setup",
+      setupTitle: "Meu setup",
       setup: [
         { name: "M-Audio Oxygen Pro 61", desc: "Controlador MIDI" },
         { name: "M-Audio Duo Track", desc: "Interface de áudio" },
@@ -476,7 +476,7 @@ export const ptPT: Dict = {
     },
     creativity: {
       title: "Criatividade além da programação",
-      text: "A música também influencia a maneira como penso sobre tecnologia. Assim como num projeto de software, gosto de experimentar, testar possibilidades, ajustar detalhes e transformar uma ideia inicial em algo funcional. Para mim, programação e música têm algo em comum: ambas permitem transformar uma ideia abstrata em algo que pode ser experimentado por outras pessoas.",
+      text: "A música também influencia a maneira como penso sobre tecnologia. Assim como em um projeto de software, gosto de experimentar, testar possibilidades, ajustar detalhes e transformar uma ideia inicial em algo funcional. Para mim, programação e música têm algo em comum: ambas permitem transformar uma ideia abstrata em algo que pode ser experimentado por outras pessoas.",
       quote: "Code is how I build. Music is how I create.",
     },
   },
@@ -484,7 +484,7 @@ export const ptPT: Dict = {
     index: "09",
     label: "Oportunidade",
     title: "O que procuro",
-    p: "A minha primeira oportunidade profissional em desenvolvimento de software. Gostava de juntar-me a uma equipa experiente onde possa aplicar o que construí, continuar a aprender e crescer com o produto.",
+    p: "Minha primeira oportunidade profissional em desenvolvimento de software. Gostaria de integrar uma equipe experiente, onde possa aplicar o que construí, continuar aprendendo e crescer junto com o produto.",
     roles: [
       "Software Developer",
       "Full Stack Developer",
@@ -503,11 +503,11 @@ export const ptPT: Dict = {
   },
   contact: {
     index: "10",
-    kicker: "Contacto",
+    kicker: "Contato",
     titleA: "Vamos construir",
     titleB: "algo juntos.",
     quote: "Não quero apenas escrever código. Quero transformar ideias em coisas que as pessoas possam usar.",
-    emailCta: "Diz olá",
+    emailCta: "Diga olá",
     items: [
       { icon: "mail", label: "Email", value: "lenilsonlso26@gmail.com", href: "mailto:lenilsonlso26@gmail.com" },
       { icon: "chat", label: "WhatsApp", value: "+351 934 109 621", href: "https://wa.me/351934109621" },

@@ -8,6 +8,7 @@ import { links, repos } from "@/lib/data";
 export default function Projects() {
   const { t } = useLang();
   const pr = t.projects;
+  const u = pr.umesppb;
 
   return (
     <section id="projects" className="relative py-24 md:py-32">
@@ -18,44 +19,119 @@ export default function Projects() {
       <div className="relative mx-auto max-w-6xl px-5 md:px-8">
         <SectionHeader index={pr.index} label={pr.label} title={pr.title} />
 
-        {/* UMESPPB banner */}
+        {/* UMESPPB featured card */}
         <Reveal>
-          <div className="card relative mb-8 overflow-hidden p-7 md:p-8">
+          <div className="card relative mb-8 overflow-hidden p-6 md:p-10">
             <div
               aria-hidden
-              className="absolute -top-10 -left-10 h-40 w-40 rounded-full bg-violet/20 blur-3xl"
+              className="absolute -top-16 -left-16 h-56 w-56 rounded-full bg-violet/20 blur-3xl"
             />
-            <div className="flex flex-wrap items-start justify-between gap-4">
-              <div>
-                <div className="flex flex-wrap items-center gap-3">
-                  <span className="text-2xl">🏛️</span>
-                  <h3 className="font-display text-2xl font-bold text-paper">
-                    {pr.umesppb.name}
-                  </h3>
-                  <span className="rounded-full border border-line px-3 py-0.5 font-mono text-[10px] tracking-widest text-cyan uppercase">
-                    {pr.umesppb.tag}
+            <div className="relative">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="text-3xl">🏛️</span>
+                <h3 className="font-display text-2xl font-bold text-paper sm:text-3xl">
+                  {u.name}
+                </h3>
+                <span className="rounded-full border border-line px-3 py-1 font-mono text-[10px] tracking-widest text-cyan uppercase">
+                  {u.tag}
+                </span>
+              </div>
+
+              <p className="mt-4 font-display text-lg font-semibold text-paper/90 md:text-xl">
+                {u.title}
+              </p>
+              <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted md:text-base">
+                {u.desc}
+              </p>
+
+              <div className="mt-8 grid gap-8 lg:grid-cols-2">
+                <div>
+                  <p className="mb-4 font-mono text-[11px] tracking-[0.3em] text-cyan uppercase">
+                    {u.featuresTitle}
+                  </p>
+                  <ul className="grid gap-2.5 sm:grid-cols-2">
+                    {u.features.map((f) => (
+                      <li
+                        key={f}
+                        className="flex items-start gap-2 text-sm text-paper/85"
+                      >
+                        <span className="mt-0.5 text-cyan">▹</span> {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <p className="mb-4 font-mono text-[11px] tracking-[0.3em] text-cyan uppercase">
+                    {u.techTitle}
+                  </p>
+                  <div className="space-y-3">
+                    <div>
+                      <p className="mb-1.5 text-xs font-semibold text-paper/70">Frontend</p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {u.tech.frontend.map((tech) => (
+                          <span key={tech} className="chip chip-sm">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <p className="mb-1.5 text-xs font-semibold text-paper/70">Backend</p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {u.tech.backend.map((tech) => (
+                          <span key={tech} className="chip chip-sm">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <p className="mb-1.5 text-xs font-semibold text-paper/70">Database</p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {u.tech.database.map((tech) => (
+                          <span key={tech} className="chip chip-sm">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <span className="mt-5 inline-block rounded-full border border-line px-3 py-1 font-mono text-[10px] text-muted">
+                    {u.status}
                   </span>
                 </div>
-                <p className="mt-3 max-w-2xl text-sm text-muted md:text-base">
-                  {pr.umesppb.desc}
-                </p>
               </div>
-              <a
-                href={links.githubRepos}
-                target="_blank"
-                rel="noreferrer"
-                className="group inline-flex items-center gap-2 font-mono text-xs tracking-widest text-cyan uppercase transition-colors hover:text-paper"
-              >
-                {pr.more.cta}
-                <Icon
-                  name="arrowUpRight"
-                  className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                />
-              </a>
+
+              <div className="mt-8 rounded-xl border border-amber/25 bg-amber/[0.04] p-4 text-sm leading-relaxed text-muted">
+                {u.context}
+              </div>
+
+              <div className="mt-6 flex flex-wrap items-center gap-3">
+                <span className="font-mono text-[11px] tracking-[0.25em] text-muted uppercase">
+                  {u.partsNote}
+                </span>
+                {u.parts.map((part) => (
+                  <a
+                    key={part.repo}
+                    href={repos[part.repo]}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group inline-flex items-center gap-1.5 rounded-full border border-line px-4 py-1.5 text-sm text-paper/85 transition-colors hover:border-cyan/50 hover:text-cyan"
+                  >
+                    <Icon name="github" className="h-4 w-4" />
+                    {part.name}
+                    <Icon
+                      name="arrowUpRight"
+                      className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </Reveal>
 
+        {/* Other repos */}
         <div className="grid gap-4 md:grid-cols-2">
           {pr.cards.map((c, i) => (
             <Reveal key={c.name} delay={(i % 2) * 0.08}>

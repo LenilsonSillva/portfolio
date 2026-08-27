@@ -2,12 +2,36 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
-import { useLang } from "./providers/LanguageContext";
+import { LANG_OPTIONS, useLang } from "./providers/LanguageContext";
 import { Icon } from "./ui/Icons";
 import { links } from "@/lib/data";
 
+function LangToggle({ compact = false }: { compact?: boolean }) {
+  const { lang, setLang } = useLang();
+  return (
+    <div
+      className={`flex items-center rounded-full border border-line p-0.5 font-mono ${
+        compact ? "text-[10px]" : "text-[10px] sm:text-[11px]"
+      }`}
+    >
+      {LANG_OPTIONS.map((l) => (
+        <button
+          key={l.id}
+          onClick={() => setLang(l.id)}
+          aria-pressed={lang === l.id}
+          className={`rounded-full px-2 py-1 tracking-wider transition-colors sm:px-2.5 ${
+            lang === l.id ? "bg-white/10 text-paper" : "text-muted hover:text-paper"
+          }`}
+        >
+          {l.label}
+        </button>
+      ))}
+    </div>
+  );
+}
+
 export default function Nav() {
-  const { t, lang, setLang } = useLang();
+  const { t } = useLang();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const { scrollYProgress } = useScroll();
@@ -41,7 +65,7 @@ export default function Nav() {
           scrolled ? "glass border-b border-line" : "border-b border-transparent bg-transparent"
         }`}
       >
-        <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:h-[72px] md:px-8">
+        <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-2 px-4 md:h-[72px] md:px-8">
           <a href="#home" className="font-display text-xl font-bold tracking-tight text-paper">
             LS<span className="text-cyan">.</span>
           </a>
@@ -56,29 +80,15 @@ export default function Nav() {
             ))}
           </ul>
 
-          <div className="flex items-center gap-3">
-            <div className="hidden items-center rounded-full border border-line p-0.5 font-mono text-[11px] sm:flex">
-              {(["en", "pt"] as const).map((l) => (
-                <button
-                  key={l}
-                  onClick={() => setLang(l)}
-                  className={`rounded-full px-2.5 py-1 uppercase tracking-wider transition-colors ${
-                    lang === l ? "bg-white/10 text-paper" : "text-muted hover:text-paper"
-                  }`}
-                >
-                  {l}
-                </button>
-              ))}
-            </div>
-
+          <div className="flex items-center gap-2 md:gap-3">
+            <LangToggle compact />
             <a
               href="#contact"
-              className="hidden items-center gap-2 rounded-full border border-line px-4 py-2 text-sm text-paper/90 transition-all hover:border-cyan/60 hover:bg-cyan/5 md:inline-flex"
+              className="hidden items-center gap-2 rounded-full border border-line px-4 py-2 text-sm text-paper/90 transition-all hover:border-cyan/60 hover:bg-cyan/5 xl:inline-flex"
             >
               <span className="animate-pulse-dot h-1.5 w-1.5 rounded-full bg-emerald-400" />
               {t.nav.open}
             </a>
-
             <button
               aria-label="Open menu"
               onClick={() => setOpen(true)}
@@ -139,24 +149,24 @@ export default function Nav() {
               </nav>
 
               <div className="flex items-center justify-between">
-                <div className="flex items-center rounded-full border border-line p-0.5 font-mono text-[11px]">
-                  {(["en", "pt"] as const).map((l) => (
-                    <button
-                      key={l}
-                      onClick={() => setLang(l)}
-                      className={`rounded-full px-3 py-1.5 uppercase tracking-wider transition-colors ${
-                        lang === l ? "bg-white/10 text-paper" : "text-muted"
-                      }`}
-                    >
-                      {l}
-                    </button>
-                  ))}
-                </div>
+                <LangToggle />
                 <div className="flex gap-3 text-muted">
-                  <a href={links.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="transition-colors hover:text-cyan">
+                  <a
+                    href={links.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="GitHub"
+                    className="transition-colors hover:text-cyan"
+                  >
                     <Icon name="github" className="h-5 w-5" />
                   </a>
-                  <a href={links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="transition-colors hover:text-cyan">
+                  <a
+                    href={links.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="LinkedIn"
+                    className="transition-colors hover:text-cyan"
+                  >
                     <Icon name="linkedin" className="h-5 w-5" />
                   </a>
                   <a href={links.email} aria-label="Email" className="transition-colors hover:text-cyan">

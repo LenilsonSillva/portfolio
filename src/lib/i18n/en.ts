@@ -23,7 +23,7 @@ export const en = {
       "$ deploy --env production",
       "building something people can use...",
     ],
-    name: "LENILSON SILVA",
+    name: "LENILSON OLIVEIRA",
     role: "Full Stack & Mobile Developer",
     skip: "click anywhere to skip",
   },
@@ -37,11 +37,6 @@ export const en = {
     available: "Open to opportunities",
     workModel: "On-site · Hybrid · Remote",
     location: "Porto, Portugal",
-    stats: [
-      { value: "01", label: "product published — Android & Web" },
-      { value: "04", label: "languages inside the PlayHome app" },
-      { value: "A→Z", label: "full cycle: idea, code, tests, release" },
-    ],
     scroll: "Scroll",
   },
   marquee: [
@@ -56,8 +51,7 @@ export const en = {
     "MySQL",
     "Expo",
     "Vercel",
-    "Vitest",
-    "Playwright",
+    "Render",
   ],
   about: {
     index: "01",
@@ -66,7 +60,7 @@ export const en = {
     p1: "My interest in technology started with programming studies and kept growing every time I turned an idea into a project of my own.",
     p2: "During my studies at the Federal University of Rio Grande do Norte (UFRN) I met programming logic, JavaScript, C++, object-oriented programming, mobile development and React Native. I didn't finish the degree — I kept going, self-taught, moving from small experiments to complete applications: frontend, backend, databases, APIs, real-time communication, authentication, i18n, monetization and release.",
     p3: "I now live in Portugal and I'm pointing my career at software development, looking for my first professional opportunity in the area.",
-    quote: "I don't learn by reading. I learn by building.",
+    quote: "I build to learn — I learn to build better.",
     workTitle: "How I work",
     work: [
       {
@@ -149,12 +143,11 @@ export const en = {
   playhome: {
     index: "03",
     kicker: "Featured Project",
-    title: "PlayHome",
+    tagline: "Social multiplayer gaming · Android & Web",
     status: "Published · in continuous development",
     meta: [
       { k: "Category", v: "Personal product" },
       { k: "Platforms", v: "Android · Web" },
-      { k: "Status", v: "Published on Google Play" },
     ],
     lead: "A social gaming platform for quick, fun matches between friends — combining offline games and online multiplayer. It started as a personal idea and evolved into a complete product spanning mobile, web and backend.",
     badges: ["Realtime lobbies", "Multi-language", "Monetized"],
@@ -181,7 +174,8 @@ export const en = {
     },
     realtime: {
       body: "One of the main technical challenges was synchronizing multiple players at the same time — with consistent state across every client.",
-      flow: ["React Native", "Socket.IO", "Node.js", "Express"],
+      flow: ["React Native", "Socket.IO", "Node.js", "WebSockets"],
+      deployNote: "Backend deployed on Render",
       items: [
         "Room creation & management",
         "Player join / leave",
@@ -231,8 +225,9 @@ export const en = {
       },
     },
     i18n: {
-      body: "Built with multi-language support from the ground up, so players from different regions can use the app in their own language.",
-      languages: ["Portuguese (BR)", "Portuguese (PT)", "English", "Spanish", "+ more"],
+      body: "Translated into more than 10 languages, so players from different regions can use the app in their own language.",
+      total: "10+ languages",
+      languages: ["Portuguese (BR)", "Portuguese (PT)", "English", "Spanish"],
       note: "Translation system with i18n keys, translated categories and texts, including the differences between pt-BR and pt-PT.",
     },
     monetization: {
@@ -252,15 +247,15 @@ export const en = {
         "Google Play Console",
         "Testing & release notes",
         "Web version on Vercel",
+        "Backend server on Render",
       ],
     },
     stackTitle: "The stack",
     stack: {
       frontend: ["React", "React Native", "TypeScript", "Vite", "Expo", "React Router", "Tailwind CSS"],
-      backend: ["Node.js", "Express.js", "Socket.IO", "WebSockets", "REST APIs"],
+      backend: ["Node.js", "Socket.IO", "WebSockets", "REST APIs"],
       data: ["AsyncStorage", "MySQL", "Prisma", "Firebase"],
-      tools: ["Git", "GitHub", "Vercel", "Render", "Linux", "Nginx", "PM2", "EAS", "Google Play Console"],
-      testing: ["Vitest", "Playwright"],
+      tools: ["Git", "GitHub", "Vercel", "Render", "Linux", "EAS", "Google Play Console"],
       other: ["JWT", "Internationalization", "AdMob", "RevenueCat"],
     },
     links: {
@@ -274,30 +269,40 @@ export const en = {
   },
   projects: {
     index: "04",
-    label: "Other Projects",
-    title: "Built while learning",
+    label: "Projects",
+    title: "More projects",
     umesppb: {
       name: "UMESPPB",
-      tag: "Study collection",
-      desc: "A collection of study projects for practicing web and full stack development: React frontend, APIs, databases, CRUD, forms and experiments with different libraries and architectures.",
+      tag: "Client project",
+      title: "Civil Police Registration & Management System",
+      desc: "A web system developed for a client to make it easier to register and manage civil police records. Officers completed their enrollment through a structured form, and the platform also included a reporting system where users could submit information about incidents that needed to be reported.",
+      status: "Completed · application no longer available",
+      featuresTitle: "Key features",
+      features: [
+        "Officer registration & enrollment (filiação)",
+        "Collection & management of registration data",
+        "Structured forms & data validation",
+        "Incident report (denúncia) submission",
+        "Management of submitted information",
+        "Frontend ↔ backend communication",
+        "Database persistence",
+        "API for data processing",
+      ],
+      techTitle: "Technologies",
+      tech: {
+        frontend: ["React", "React Router", "Material UI", "React Hook Form"],
+        backend: ["Node.js", "Express"],
+        database: ["MySQL", "Prisma"],
+      },
+      context:
+        "Built for real use — the system was actually used to register officers and receive reports. The application is probably no longer online, but part of the code remains on GitHub to showcase the technical experience gained during development.",
+      partsNote: "Parts of the codebase on GitHub",
+      parts: [
+        { name: "Filie", repo: "filie" },
+        { name: "Denúncias", repo: "denuncias" },
+      ],
     },
     cards: [
-      {
-        name: "Filie",
-        type: "Study · Full Stack",
-        repo: "filie",
-        desc: "Full stack practice with reusable components and real front/back integration.",
-        tech: ["React", "React Router", "Material UI", "React Hook Form", "Node.js", "Express", "Prisma", "MySQL"],
-        points: ["Forms & validation", "CRUD & APIs", "ORM", "Front/back integration"],
-      },
-      {
-        name: "Denúncias",
-        type: "Study · Web & Full Stack",
-        repo: "denuncias",
-        desc: "Experimentation with web and full stack development technologies.",
-        tech: ["React", "Node.js"],
-        points: ["Web fundamentals", "APIs", "Experimentation"],
-      },
       {
         name: "tests-nextjs-vitest-playwright",
         type: "Study · Testing",
@@ -332,10 +337,11 @@ export const en = {
   experience: {
     index: "05",
     label: "Experience",
-    title: "Where I've been",
+    title: "Software experience",
     independent: {
       role: "Independent Developer",
       org: "Self-driven",
+      place: "Porto, Portugal",
       period: "Ongoing",
       desc: "In parallel with my professional job, I build applications and personal projects to study technologies, solve problems and turn ideas into working products.",
       areas: [
@@ -351,21 +357,9 @@ export const en = {
         "Deployment",
       ],
     },
-    indutel: {
-      role: "Laser Cutting Machine Operator",
-      org: "Indutel",
-      place: "Portugal",
-      period: "2026 — Present",
-      bullets: [
-        "Operation of fiber laser cutting machines",
-        "Metal sheet processing",
-        "Production process monitoring",
-        "Quality control of parts",
-        "Material optimization & waste reduction",
-      ],
-      note: "A role outside of technology — but one that built discipline, attention to detail, process compliance and practical problem solving. Skills that matter in software, too. I keep developing and studying programming independently.",
-      skills: ["Discipline", "Attention to detail", "Process compliance", "Practical problem solving"],
-    },
+    highlight:
+      "The result of this path: PlayHome — a multiplayer social gaming platform published on Google Play.",
+    highlightCta: "See the case study",
   },
   education: {
     index: "06",
@@ -420,9 +414,14 @@ export const en = {
     title: "From Brasil to Portugal",
     items: [
       {
+        icon: "🎛️",
+        title: "IMD (UFRN) · Technical course",
+        text: "Technical course in electronics focused on IT — from the basics to the advanced level, using Java.",
+      },
+      {
         icon: "🇧🇷",
-        title: "Brasil · UFRN",
-        text: "Started my tech education at the Federal University of Rio Grande do Norte: programming, C++, JavaScript, mobile development, React Native and computing fundamentals.",
+        title: "UFRN · University",
+        text: "I didn't finish the technical course — I moved on to university: programming logic, JavaScript, C++, mobile development and React Native.",
       },
       {
         icon: "💻",
@@ -430,19 +429,14 @@ export const en = {
         text: "Kept learning through my own projects, experimenting with technologies and taking online courses.",
       },
       {
-        icon: "🚀",
-        title: "Full Stack projects",
-        text: "Evolved into complete applications: frontend, backend, APIs, databases and realtime systems.",
+        icon: "🇵🇹",
+        title: "Portugal",
+        text: "Moved to Portugal and kept growing as a developer while working full-time.",
       },
       {
         icon: "🎮",
         title: "PlayHome",
         text: "Built my own social multiplayer gaming platform for Android and Web — and published it on Google Play.",
-      },
-      {
-        icon: "🇵🇹",
-        title: "Portugal",
-        text: "Moved to Portugal and kept growing as a developer while working full-time.",
       },
       {
         icon: "📚",
@@ -460,30 +454,39 @@ export const en = {
     index: "08",
     label: "Beyond Code",
     title: "Beyond the code",
+    sub: "Beyond Code",
+    intro:
+      "Programming is one of my main ways of creating — but my curiosity doesn't stop at code. Outside of technology, music holds an important place in my life: I like to play instruments, explore different sounds and experiment with new possibilities through music production.",
+    intro2:
+      "That relationship between music and technology also led me to explore MIDI, virtual instruments, controllers and digital production — combining creativity with technical tools.",
     music: {
-      sub: "Beyond Code",
       title: "Music",
-      text: "Music and technology are two of my biggest creative interests. I enjoy exploring MIDI, virtual instruments, sound design and music production.",
-      instruments: ["Keyboard", "Guitar", "Bass", "Drums"],
-      tech: ["MIDI", "Kontakt", "Reaper", "MIDI controllers", "Sound design"],
-      gearTitle: "Setup",
-      gear: ["M-Audio Oxygen Pro 61", "M-Audio Duo Track", "Fender CD-60SCE", "Ibanez SR300"],
-    },
-    games: {
-      title: "Games",
-      text: "Creativity, social interaction and technology — one of the main inspirations behind PlayHome.",
-      items: [
-        "Game design",
-        "Multiplayer",
-        "Scoring systems",
-        "Player interaction",
-        "Gamification",
-        "Game UI",
+      text: "I work with different instruments and enjoy exploring both performance and the technical side of music production.",
+      instrumentsTitle: "Instruments",
+      instruments: ["🎹 Keyboard", "🪕 Acoustic guitar", "🎸 Guitar"],
+      techTitle: "Production & music technology",
+      tech: [
+        "MIDI",
+        "Kontakt",
+        "Reaper",
+        "Virtual instruments",
+        "Sound design",
+        "Music production",
+        "MIDI controllers",
+      ],
+      setupTitle: "My setup",
+      setup: [
+        { name: "M-Audio Oxygen Pro 61", desc: "MIDI controller" },
+        { name: "M-Audio Duo Track", desc: "Audio interface" },
+        { name: "Fender CD-60SCE", desc: "Acoustic guitar" },
+        { name: "Kontakt", desc: "Virtual instruments" },
+        { name: "Reaper", desc: "Production & audio editing" },
       ],
     },
-    cars: {
-      title: "Cars",
-      text: "Classics and unusual automotive projects — a small corner of my curiosity.",
+    creativity: {
+      title: "Creativity beyond programming",
+      text: "Music also influences the way I think about technology. Just like in a software project, I like to experiment, test possibilities, tweak details and turn an initial idea into something that works. For me, programming and music share something in common: both let you turn an abstract idea into something other people can experience.",
+      quote: "Code is how I build. Music is how I create.",
     },
   },
   looking: {
@@ -516,9 +519,10 @@ export const en = {
     emailCta: "Say hello",
     items: [
       { icon: "mail", label: "Email", value: "lenilsonlso26@gmail.com", href: "mailto:lenilsonlso26@gmail.com" },
-      { icon: "phone", label: "WhatsApp", value: "+351 934 109 621", href: "https://wa.me/351934109621" },
+      { icon: "chat", label: "WhatsApp", value: "+351 934 109 621", href: "https://wa.me/351934109621" },
+      { icon: "phone", label: "Phone", value: "+351 929 056 689", href: "tel:+351929056689" },
       { icon: "github", label: "GitHub", value: "@LenilsonSillva", href: "https://github.com/LenilsonSillva" },
-      { icon: "linkedin", label: "LinkedIn", value: "in/lenilson.sillva", href: "https://www.linkedin.com/in/lenilson.sillva" },
+      { icon: "linkedin", label: "LinkedIn", value: "in/lenilson-sillva", href: "https://www.linkedin.com/in/lenilson-sillva/" },
       { icon: "instagram", label: "Instagram", value: "@lenilson.sillva", href: "https://instagram.com/lenilson.sillva" },
       { icon: "facebook", label: "Facebook", value: "/lenilson.sillva", href: "https://facebook.com/lenilson.sillva" },
     ],

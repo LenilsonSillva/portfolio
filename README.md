@@ -11,7 +11,7 @@ Portfólio pessoal profissional construído com **Next.js (App Router)**, **Type
 - 🎬 **Intro em ecrãs** — sequência de arranque (terminal → nome → reveal) com barra de progresso, contadora 00–100 e *skip* por clique;
 - 🌗 **Tema escuro elegante** — tipografia display (Space Grotesk), acentos em gradiente violeta/ciano, grid subtil, ruído (noise) e glow;
 - ✨ **Animações por toda a parte** — reveals no scroll, marquee de tecnologias, tabs com transição (case study do PlayHome), timeline animada, glow que segue o cursor, botões magnéticos e barra de progresso de scroll;
-- 🌐 **i18n EN/PT** — alternância de idioma no menu, persistida em `localStorage` (o mesmo conceito aplicado no PlayHome);
+- 🌐 **i18n EN / PT-BR / PT-PT** — deteção automática do idioma do sistema (pt-BR → pt-BR, pt-PT → pt-PT, resto → inglês) + alternância manual no menu, persistida em `localStorage` (o mesmo conceito aplicado no PlayHome);
 - 📱 **Totalmente responsivo** — do mobile ao desktop, com menu em *overlay* animado;
 - ♿ **Acessibilidade** — respeita `prefers-reduced-motion`, navegação por âncoras e HTML semântico;
 - ⚡ **Next.js App Router** — pronto para deploy na Vercel.
@@ -91,7 +91,7 @@ vercel
 - [PlayHome — Website](https://play-home-iota.vercel.app/)
 - [PlayHome — Website (código)](https://github.com/LenilsonSillva/PlayHome-Website)
 - [PlayHome — Backend (código)](https://github.com/LenilsonSillva/PlayHome-backend)
-- [GitHub](https://github.com/LenilsonSillva) · [LinkedIn](https://www.linkedin.com/in/lenilson.sillva)
+- [GitHub](https://github.com/LenilsonSillva) · [LinkedIn](https://www.linkedin.com/in/lenilson-sillva/)
 
 ---
 

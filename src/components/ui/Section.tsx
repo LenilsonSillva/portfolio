@@ -28,6 +28,49 @@ export function Reveal({
   );
 }
 
+/** Big numbered section header: 01 ──── LABEL */
+export function SectionKicker({
+  index,
+  label,
+  center = false,
+}: {
+  index: string;
+  label: string;
+  center?: boolean;
+}) {
+  return (
+    <Reveal
+      className={`mb-6 flex items-end gap-3 md:gap-4 ${
+        center ? "justify-center" : ""
+      }`}
+    >
+      <span className="text-gradient font-display text-4xl leading-none font-bold md:text-5xl">
+        {index}
+      </span>
+      <span className="mb-1 h-px w-8 bg-gradient-to-r from-cyan/60 to-transparent md:w-14" />
+      <span className="mb-0.5 font-mono text-[11px] uppercase tracking-[0.3em] text-muted md:text-xs">
+        {label}
+      </span>
+    </Reveal>
+  );
+}
+
+export function SectionTitle({ title }: { title: string }) {
+  return (
+    <div className="overflow-hidden">
+      <motion.h2
+        initial={{ y: "110%" }}
+        whileInView={{ y: "0%" }}
+        viewport={{ once: true, margin: "-70px" }}
+        transition={{ duration: 0.9, ease: EASE }}
+        className="font-display text-4xl font-bold tracking-tight text-paper md:text-5xl lg:text-6xl"
+      >
+        {title}
+      </motion.h2>
+    </div>
+  );
+}
+
 export function SectionHeader({
   index,
   label,
@@ -39,22 +82,8 @@ export function SectionHeader({
 }) {
   return (
     <div className="mb-12 md:mb-16">
-      <Reveal className="mb-5 flex items-center gap-4 font-mono text-[11px] uppercase tracking-[0.35em] text-muted">
-        <span className="text-cyan">{index}</span>
-        <span className="h-px w-10 bg-gradient-to-r from-cyan/60 to-transparent" />
-        <span>{label}</span>
-      </Reveal>
-      <div className="overflow-hidden">
-        <motion.h2
-          initial={{ y: "110%" }}
-          whileInView={{ y: "0%" }}
-          viewport={{ once: true, margin: "-70px" }}
-          transition={{ duration: 0.9, ease: EASE }}
-          className="font-display text-4xl font-bold tracking-tight text-paper md:text-5xl lg:text-6xl"
-        >
-          {title}
-        </motion.h2>
-      </div>
+      <SectionKicker index={index} label={label} />
+      <SectionTitle title={title} />
     </div>
   );
 }

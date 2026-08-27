@@ -21,6 +21,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://portfolio-rouge-three-50.vercel.app"),
   title: "Lenilson Silva — Full Stack & Mobile Developer",
   description:
     "Portfolio of Lenilson Silva, full stack & mobile developer based in Porto, Portugal. React, Next.js, TypeScript, React Native and Node.js — creator of PlayHome, a multiplayer social gaming platform published on Google Play.",
@@ -37,6 +38,20 @@ export const metadata: Metadata = {
     "Porto",
     "PlayHome",
   ],
+  openGraph: {
+    title: "Lenilson Silva — Full Stack & Mobile Developer",
+    description:
+      "Full stack & mobile developer in Porto, Portugal. Creator of PlayHome — a multiplayer social gaming platform published on Google Play.",
+    url: "https://portfolio-rouge-three-50.vercel.app",
+    images: [
+      {
+        url: "/images/playhome-key.jpg",
+        width: 1200,
+        height: 900,
+        alt: "PlayHome — social multiplayer gaming platform",
+      },
+    ],
+  },
 };
 
 export const viewport: Viewport = {

@@ -21,7 +21,7 @@ export default function Hero({ introDone }: { introDone: boolean }) {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen flex-col justify-center overflow-hidden pb-16 pt-28"
+      className="relative flex min-h-svh flex-col justify-center overflow-hidden pb-16 pt-28"
     >
       {/* background */}
       <div
@@ -53,7 +53,7 @@ export default function Hero({ introDone }: { introDone: boolean }) {
           </span>
         </motion.div>
 
-        <h1 className="font-display text-[clamp(2.9rem,9vw,6.5rem)] leading-[0.95] font-bold tracking-tight">
+        <h1 className="font-display text-[clamp(2.7rem,9vw,6.5rem)] leading-[0.95] font-bold tracking-tight">
           <span className="block overflow-hidden">
             <motion.span variants={item} className="block text-paper">
               {t.hero.titleA}
@@ -108,23 +108,14 @@ export default function Hero({ introDone }: { introDone: boolean }) {
         </motion.p>
       </motion.div>
 
-      {/* stats */}
+      {/* scroll hint */}
       <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        animate={introDone ? { opacity: 1, y: 0 } : {}}
-        transition={{ delay: 1.15, duration: 0.8, ease: EASE }}
+        initial={{ opacity: 0 }}
+        animate={introDone ? { opacity: 1 } : {}}
+        transition={{ delay: 1.4, duration: 0.8, ease: EASE }}
         className="relative z-10 mx-auto mt-14 w-full max-w-6xl px-5 md:px-8"
       >
-        <div className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3">
-          {t.hero.stats.map((s) => (
-            <div key={s.label} className="bg-ink/95 px-6 py-5">
-              <div className="text-gradient font-display text-3xl font-bold">{s.value}</div>
-              <div className="mt-1 text-sm text-muted">{s.label}</div>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-10 flex justify-center">
+        <div className="flex justify-center">
           <div className="flex flex-col items-center gap-2 text-muted">
             <span className="font-mono text-[10px] uppercase tracking-[0.3em]">
               {t.hero.scroll}

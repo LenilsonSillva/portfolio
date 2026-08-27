@@ -7,10 +7,11 @@ export type IconName =
   | "facebook"
   | "mail"
   | "phone"
+  | "chat"
+  | "googleplay"
   | "external"
   | "arrowUp"
-  | "arrowUpRight"
-  | "play";
+  | "arrowUpRight";
 
 const paths: Record<IconName, ReactNode> = {
   github: (
@@ -63,6 +64,23 @@ const paths: Record<IconName, ReactNode> = {
   phone: (
     <path d="M6.62 3.2h2.87l1.4 4.2-1.96 1.5a12.6 12.6 0 0 0 6.17 6.16l1.5-1.96 4.2 1.4v2.87c0 1.21-.99 2.2-2.2 2.13C11.3 18.94 5.06 12.7 4.49 5.4c-.07-1.21.92-2.2 2.13-2.2Z" />
   ),
+  chat: (
+    <>
+      <path
+        d="M21 11.5c0 4.1-4 7.5-9 7.5-1 0-2-.1-2.9-.4L5 20l1.2-3C4.6 15.6 3 13.7 3 11.5 3 7.4 7 4 12 4s9 3.4 9 7.5Z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinejoin="round"
+      />
+      <circle cx="8.5" cy="11.5" r="0.95" />
+      <circle cx="12" cy="11.5" r="0.95" />
+      <circle cx="15.5" cy="11.5" r="0.95" />
+    </>
+  ),
+  googleplay: (
+    <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5ZM16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12ZM20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81ZM6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+  ),
   external: (
     <path d="M14 4.5h5.5V10h-1.9V6.66l-8.06 8.06-1.34-1.34L16.26 5.3H14V4.5ZM5.5 6.5H13v1.9H7.4v10.2H16.2V14h1.9v6.5H5.5V6.5Z" />
   ),
@@ -85,9 +103,6 @@ const paths: Record<IconName, ReactNode> = {
         strokeLinejoin="round"
       />
     </>
-  ),
-  play: (
-    <path d="M8 5.14v13.72c0 .8.87 1.3 1.56.88l10.8-6.86a1.04 1.04 0 0 0 0-1.76L9.56 4.26A1.04 1.04 0 0 0 8 5.14Z" />
   ),
 };
 

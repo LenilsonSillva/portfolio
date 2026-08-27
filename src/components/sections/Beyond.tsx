@@ -12,102 +12,92 @@ export default function Beyond() {
     <section id="beyond" className="relative py-24 md:py-32">
       <div
         aria-hidden
-        className="absolute right-[-12%] bottom-0 h-[380px] w-[380px] rounded-full bg-amber/10 blur-[130px]"
+        className="absolute top-1/3 left-[-15%] h-[420px] w-[420px] rounded-full bg-violet/10 blur-[130px]"
       />
       <div className="relative mx-auto max-w-6xl px-5 md:px-8">
         <SectionHeader index={b.index} label={b.label} title={b.title} />
 
-        <div className="grid gap-5 lg:grid-cols-3">
-          {/* Music */}
-          <Reveal>
-            <div className="card card-hover h-full overflow-hidden">
-              <div className="relative h-44">
+        <Reveal>
+          <div className="card relative overflow-hidden">
+            <div className="grid lg:grid-cols-5">
+              {/* image */}
+              <div className="relative h-60 sm:h-72 lg:col-span-2 lg:h-auto">
                 <Image
                   src="/images/music.jpg"
                   alt="MIDI keyboard in a dark studio"
                   fill
-                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
-                <div className="absolute bottom-3 left-5">
+                <div
+                  className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-ink/40"
+                />
+                <div className="absolute bottom-5 left-6">
                   <p className="font-mono text-[10px] tracking-[0.3em] text-cyan uppercase">
-                    {b.music.sub}
+                    {b.sub}
                   </p>
-                  <h3 className="font-display text-2xl font-bold text-paper">
-                    🎹 {b.music.title}
+                  <h3 className="mt-1 font-display text-3xl font-bold text-paper">
+                    🎵 {b.music.title}
                   </h3>
                 </div>
               </div>
-              <div className="p-6">
-                <p className="text-sm leading-relaxed text-muted">{b.music.text}</p>
-                <div className="mt-4 flex flex-wrap gap-1.5">
-                  {b.music.instruments.map((s) => (
-                    <span key={s} className="chip chip-sm">
-                      {s}
-                    </span>
-                  ))}
-                </div>
-                <div className="mt-3 flex flex-wrap gap-1.5">
-                  {b.music.tech.map((s) => (
-                    <span key={s} className="chip chip-sm">
-                      {s}
-                    </span>
-                  ))}
-                </div>
-                <p className="mt-5 mb-2 font-mono text-[10px] tracking-[0.3em] text-muted/70 uppercase">
-                  {b.music.gearTitle}
-                </p>
-                <ul className="space-y-1 font-mono text-xs text-muted">
-                  {b.music.gear.map((g) => (
-                    <li key={g}>· {g}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </Reveal>
 
-          {/* Games */}
-          <Reveal delay={0.08}>
-            <div className="card card-hover flex h-full flex-col p-6">
-              <h3 className="font-display text-2xl font-bold text-paper">
-                🎮 {b.games.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted">{b.games.text}</p>
-              <div className="mt-5 flex flex-wrap gap-1.5">
-                {b.games.items.map((s) => (
-                  <span key={s} className="chip chip-sm">
-                    {s}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </Reveal>
+              {/* content */}
+              <div className="p-6 md:p-10 lg:col-span-3">
+                <p className="text-base leading-relaxed text-paper/90">{b.intro}</p>
+                <p className="mt-4 text-sm leading-relaxed text-muted">{b.intro2}</p>
 
-          {/* Cars */}
-          <Reveal delay={0.16}>
-            <div className="card card-hover flex h-full flex-col overflow-hidden">
-              <div className="relative h-44">
-                <Image
-                  src="/images/cars.jpg"
-                  alt="Classic car at night"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 33vw"
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
-                <div className="absolute bottom-3 left-5">
-                  <h3 className="font-display text-2xl font-bold text-paper">
-                    🚗 {b.cars.title}
-                  </h3>
+                <div className="mt-8 grid gap-8 sm:grid-cols-2">
+                  <div>
+                    <p className="mb-3 font-mono text-[11px] tracking-[0.3em] text-cyan uppercase">
+                      {b.music.instrumentsTitle}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {b.music.instruments.map((s) => (
+                        <span key={s} className="chip">
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                    <p className="mt-6 mb-3 font-mono text-[11px] tracking-[0.3em] text-cyan uppercase">
+                      {b.music.techTitle}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {b.music.tech.map((s) => (
+                        <span key={s} className="chip chip-sm">
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <p className="mb-3 font-mono text-[11px] tracking-[0.3em] text-cyan uppercase">
+                      🎛️ {b.music.setupTitle}
+                    </p>
+                    <ul className="space-y-3">
+                      {b.music.setup.map((s) => (
+                        <li key={s.name} className="flex flex-col">
+                          <span className="text-sm font-semibold text-paper/90">{s.name}</span>
+                          <span className="font-mono text-xs text-muted">{s.desc}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="mt-10 border-t border-line pt-8">
+                  <p className="font-display text-lg font-semibold text-paper">
+                    💡 {b.creativity.title}
+                  </p>
+                  <p className="mt-3 text-sm leading-relaxed text-muted">{b.creativity.text}</p>
+                  <p className="mt-6 font-display text-2xl font-bold text-gradient md:text-3xl">
+                    “{b.creativity.quote}”
+                  </p>
                 </div>
               </div>
-              <div className="flex-1 p-6">
-                <p className="text-sm leading-relaxed text-muted">{b.cars.text}</p>
-              </div>
             </div>
-          </Reveal>
-        </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

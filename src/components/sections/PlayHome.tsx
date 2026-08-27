@@ -4,7 +4,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useLang } from "../providers/LanguageContext";
-import { Reveal, SectionHeader } from "../ui/Section";
+import { Reveal, SectionKicker } from "../ui/Section";
 import { Icon } from "../ui/Icons";
 import { links } from "@/lib/data";
 import { EASE } from "@/lib/motion";
@@ -26,10 +26,50 @@ export default function PlayHome() {
         className="bg-grid absolute inset-0 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,black,transparent)]"
       />
       <div className="relative mx-auto max-w-6xl px-5 md:px-8">
-        <SectionHeader index={p.index} label={p.kicker} title={p.title} />
+        {/* Header: 03 — FEATURED PROJECT */}
+        <SectionKicker index={p.index} label={p.kicker} />
 
-        <Reveal>
-          <div className="flex flex-wrap items-center gap-x-8 gap-y-3 font-mono text-xs">
+        {/* Icon + PLAYHOME */}
+        <div className="flex flex-wrap items-center gap-5 md:gap-7">
+          <Reveal className="relative shrink-0" y={36}>
+            <div
+              aria-hidden
+              className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-fuchsia-500/30 to-cyan-400/30 blur-xl"
+            />
+            <Image
+              src="/images/playhome-icon.png"
+              alt="PlayHome logo"
+              width={112}
+              height={112}
+              className="relative h-20 w-20 rounded-2xl border border-white/10 sm:h-24 sm:w-24 md:h-28 md:w-28"
+            />
+          </Reveal>
+          <Reveal delay={0.05} className="min-w-0 flex-1">
+            <div className="overflow-hidden">
+              <motion.h2
+                initial={{ y: "110%" }}
+                whileInView={{ y: "0%" }}
+                viewport={{ once: true, margin: "-70px" }}
+                transition={{ duration: 0.9, ease: EASE }}
+                className="font-display text-5xl font-bold tracking-tight text-paper sm:text-6xl md:text-7xl"
+              >
+                Play<span className="text-gradient">Home</span>
+              </motion.h2>
+            </div>
+            <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.3em] text-muted">
+              {p.tagline}
+            </p>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-2 font-mono text-[10px] tracking-widest text-emerald-300 uppercase">
+              <span className="animate-pulse-dot h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              {p.status}
+            </span>
+          </Reveal>
+        </div>
+
+        <Reveal delay={0.1}>
+          <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 font-mono text-xs">
             {p.meta.map((m) => (
               <span key={m.k} className="flex items-center gap-2">
                 <span className="tracking-[0.25em] text-muted/70 uppercase">{m.k}:</span>
@@ -62,7 +102,7 @@ export default function PlayHome() {
               ))}
             </div>
 
-            <div className="mt-6 min-h-[300px] md:min-h-[280px]">
+            <div className="mt-6 min-h-[320px] md:min-h-[300px]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={tab}
@@ -107,6 +147,9 @@ export default function PlayHome() {
                           </span>
                         ))}
                       </div>
+                      <p className="mb-5 flex items-center gap-2 font-mono text-xs text-muted">
+                        <span className="text-cyan">⬢</span> {p.realtime.deployNote}
+                      </p>
                       <ul className="grid gap-2.5 sm:grid-cols-2">
                         {p.realtime.items.map((it) => (
                           <li key={it} className="flex items-start gap-2 text-sm text-paper/85">
@@ -164,6 +207,9 @@ export default function PlayHome() {
                     <div>
                       <p className="text-base leading-relaxed text-paper/85">{p.i18n.body}</p>
                       <div className="mt-5 flex flex-wrap gap-2">
+                        <span className="rounded-full border border-transparent bg-gradient-to-r from-violet to-cyan px-4 py-1.5 text-sm font-semibold text-[#05060b]">
+                          {p.i18n.total}
+                        </span>
                         {p.i18n.languages.map((l) => (
                           <span
                             key={l}
@@ -227,7 +273,7 @@ export default function PlayHome() {
                   rel="noreferrer"
                   className={`${btnBase} bg-gradient-to-r from-violet to-cyan font-semibold text-[#05060b]`}
                 >
-                  <Icon name="play" className="h-4 w-4" /> {p.links.play}
+                  <Icon name="googleplay" className="h-4 w-4" /> {p.links.play}
                 </a>
                 <a
                   href={links.playHomeWeb}
@@ -257,15 +303,15 @@ export default function PlayHome() {
             </Reveal>
           </div>
 
-          {/* right: key visual */}
-          <div className="lg:sticky lg:top-28">
+          {/* right: key visual (first on mobile) */}
+          <div className="order-first lg:order-none lg:sticky lg:top-28">
             <Reveal delay={0.1}>
               <div className="relative">
                 <div
                   aria-hidden
                   className="absolute -inset-4 rounded-[28px] bg-gradient-to-br from-violet/30 to-cyan/20 blur-2xl"
                 />
-                <div className="relative overflow-hidden rounded-3xl border border-line">
+                <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-line">
                   <Image
                     src="/images/playhome-key.jpg"
                     alt="PlayHome — social multiplayer gaming platform"
@@ -284,10 +330,6 @@ export default function PlayHome() {
                       {b}
                     </motion.span>
                   ))}
-                  <div className="absolute bottom-4 left-4 flex items-center gap-2 font-mono text-[11px] text-paper/80">
-                    <span className="animate-pulse-dot h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                    {p.status}
-                  </div>
                 </div>
               </div>
             </Reveal>
