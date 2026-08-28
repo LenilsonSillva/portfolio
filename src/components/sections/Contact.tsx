@@ -1,12 +1,12 @@
 "use client";
 
-import { motion } from "framer-motion";
+import type { CSSProperties } from "react";
 import { useLang } from "../providers/LanguageContext";
 import { Reveal, SectionKicker } from "../ui/Section";
+import { RevealCSS } from "../ui/RevealCSS";
 import { Magnetic } from "../ui/Magnetic";
 import { Icon, type IconName } from "../ui/Icons";
 import { links } from "@/lib/data";
-import { EASE } from "@/lib/motion";
 
 export default function Contact() {
   const { t } = useLang();
@@ -22,34 +22,31 @@ export default function Contact() {
         <SectionKicker index={c.index} label={c.kicker} />
 
         <div className="mx-auto max-w-3xl text-center">
-          <div className="overflow-hidden">
-            <motion.h2
-              initial={{ y: "110%" }}
-              whileInView={{ y: "0%" }}
-              viewport={{ once: true, margin: "-70px" }}
-              transition={{ duration: 0.9, ease: EASE }}
-              className="font-display text-4xl font-bold tracking-tight text-paper md:text-5xl lg:text-6xl"
-            >
-              {c.titleA}
-            </motion.h2>
-          </div>
-          <div className="overflow-hidden">
-            <motion.h2
-              initial={{ y: "110%" }}
-              whileInView={{ y: "0%" }}
-              viewport={{ once: true, margin: "-70px" }}
-              transition={{ duration: 0.9, delay: 0.12, ease: EASE }}
-              className="text-gradient font-display text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
-            >
-              {c.titleB}
-            </motion.h2>
-          </div>
+          <RevealCSS>
+            <div className="overflow-hidden">
+              <h2 className="slide-css font-display text-4xl font-bold tracking-tight text-paper md:text-5xl lg:text-6xl">
+                {c.titleA}
+              </h2>
+            </div>
+            <div className="overflow-hidden">
+              <h2
+                className="slide-css text-gradient font-display text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
+                style={{ "--sd": "0.14s" } as CSSProperties}
+              >
+                {c.titleB}
+              </h2>
+            </div>
+          </RevealCSS>
 
-          <Reveal delay={0.1}>
-            <p className="mx-auto mt-7 max-w-xl text-lg text-muted italic">
+          <RevealCSS delay={0.1}>
+            <p className="mt-6 text-lg font-medium text-paper/85 md:text-xl">{c.call}</p>
+          </RevealCSS>
+
+          <RevealCSS delay={0.18}>
+            <p className="mx-auto mt-5 max-w-xl text-lg text-muted italic">
               “{c.quote}”
             </p>
-          </Reveal>
+          </RevealCSS>
 
           <Reveal delay={0.16} className="mt-10 flex flex-wrap justify-center gap-4">
             <Magnetic>

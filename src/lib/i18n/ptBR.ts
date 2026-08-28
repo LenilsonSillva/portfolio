@@ -57,7 +57,7 @@ export const ptBR: Dict = {
   about: {
     index: "01",
     label: "Sobre",
-    title: "Autodidata, orientado a projetos",
+    title: "Autodidata, focado em construir e publicar",
     p1: "Meu interesse por tecnologia começou com os estudos de programação e foi crescendo à medida que transformei ideias em projetos próprios.",
     p2: "Durante os estudos na Universidade Federal do Rio Grande do Norte (UFRN) tive contato com lógica de programação, JavaScript, C++, programação orientada a objetos, desenvolvimento mobile e React Native. Não concluí a graduação — continuei de forma autodidata, passando de pequenos experimentos a aplicações completas: frontend, backend, bancos de dados, APIs, comunicação em tempo real, autenticação, internacionalização, monetização e publicação.",
     p3: "Vivo agora em Portugal e estou direcionando minha carreira para o desenvolvimento de software, procurando minha primeira oportunidade profissional na área.",
@@ -505,6 +505,7 @@ export const ptBR: Dict = {
     kicker: "Contato",
     titleA: "Vamos construir",
     titleB: "algo juntos.",
+    call: "Fale comigo",
     quote: "Não quero apenas escrever código. Quero transformar ideias em coisas que as pessoas possam usar.",
     emailCta: "Diga olá",
     items: [
