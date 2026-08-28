@@ -170,6 +170,19 @@ body {
   animation: pulse-dot 2s ease-in-out infinite;
 }
 
+/* Safety net: if the intro (JS-driven) ever fails to unmount — e.g. JS
+   throttled/stalled on iOS — the overlay still fades out on its own.
+   In the normal flow the overlay is already unmounted before this runs. */
+@keyframes intro-safety-fade {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.intro-safety {
+  animation: intro-safety-fade 0.7s ease 5.5s forwards;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

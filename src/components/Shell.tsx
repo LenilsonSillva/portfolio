@@ -23,12 +23,41 @@ import Footer from "./sections/Footer";
 export default function Shell() {
   const [introDone, setIntroDone] = useState(false);
 
+  // Safety net: the intro always finishes by itself (~4s). If timers are
+  // throttled or the sequence stalls (iOS Safari), never keep the page
+  // hidden for longer than 6s.
+  useEffect(() => {
+    const t = setTimeout(() => setIntroDone(true), 6000);
+    return () => clearTimeout(t);
+  }, []);
+
   useEffect(() => {
     document.documentElement.style.overflow = introDone ? "" : "hidden";
+    if (introDone) {
+      // iOS Safari can stall the repaint after a full-screen fixed overlay
+      // is removed while <html> was locked (overflow: hidden) — the page
+      // stays "black" until a forced reflow/repaint. Kick it explicitly.
+      window.scrollTo(0, 0);
+      let raf2 = 0;
+      const raf1 = requestAnimationFrame(() => {
+        void document.body.offsetHeight;
+        document.body.style.willChange = "transform";
+        raf2 = requestAnimationFrame(() => {
+          document.body.style.willChange = "";
+        });
+      });
+      return () => {
+        cancelAnimationFrame(raf1);
+        cancelAnimationFrame(raf2);
+      };
+    }
+  }, [introDone]);
+
+  useEffect(() => {
     return () => {
       document.documentElement.style.overflow = "";
     };
-  }, [introDone]);
+  }, []);
 
   return (
     <LanguageProvider>

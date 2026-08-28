@@ -69,7 +69,7 @@ export default function PlayHome() {
         </div>
 
         <Reveal delay={0.1}>
-          <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 font-mono text-xs md:mt-16">
+          <div className="mt-16 flex flex-wrap items-center gap-x-8 gap-y-3 font-mono text-xs md:mt-20">
             {p.meta.map((m) => (
               <span key={m.k} className="flex items-center gap-2">
                 <span className="tracking-[0.25em] text-muted/70 uppercase">{m.k}:</span>
@@ -88,7 +88,7 @@ export default function PlayHome() {
               </p>
             </Reveal>
 
-            <div className="mt-8 flex flex-wrap gap-2">
+            <div className="mt-8 flex flex-wrap justify-center gap-2 md:justify-start">
               {p.tabs.map((tb) => (
                 <button
                   key={tb.id}

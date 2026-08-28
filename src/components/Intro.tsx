@@ -62,7 +62,7 @@ export default function Intro({ onDone }: { onDone: () => void }) {
 
   return (
     <div
-      className="fixed inset-0 z-[100] bg-ink"
+      className="intro-safety fixed inset-0 z-[100] bg-ink"
       onClick={() => finishRef.current()}
       role="presentation"
     >
@@ -97,9 +97,9 @@ export default function Intro({ onDone }: { onDone: () => void }) {
                       ))}
                       <span className="animate-blink ml-1.5 inline-block h-4 w-2.5 bg-cyan align-middle" />
                     </div>
-                    <div className="font-mono text-[11px] uppercase tracking-[0.3em] text-muted">
-                      <span>{t.intro.skip}</span>
-                    </div>
+                      <div className="hidden font-mono text-[11px] uppercase tracking-[0.3em] text-muted md:block">
+                        <span>{t.intro.skip}</span>
+                      </div>
                   </>
                 ) : (
                   <div className="flex flex-1 flex-col items-center justify-center">

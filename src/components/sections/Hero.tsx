@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion, type Variants } from "framer-motion";
 import { useLang } from "../providers/LanguageContext";
 import { Magnetic } from "../ui/Magnetic";
@@ -17,6 +18,14 @@ const item: Variants = {
 
 export default function Hero({ introDone }: { introDone: boolean }) {
   const { t } = useLang();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+  // While the intro plays (client only), the hero is hidden. The server
+  // render keeps it fully visible so the page can never stay black if JS
+  // is slow or unavailable (iOS): the opaque intro overlay covers it.
+  const phase = introDone || !mounted ? "show" : "hidden";
 
   return (
     <section
@@ -39,8 +48,8 @@ export default function Hero({ introDone }: { introDone: boolean }) {
 
       <motion.div
         variants={container}
-        initial="hidden"
-        animate={introDone ? "show" : "hidden"}
+        initial={mounted ? "hidden" : "show"}
+        animate={phase}
         className="relative z-10 mx-auto w-full max-w-6xl px-5 md:px-8"
       >
         <motion.div variants={item} className="mb-8 flex flex-wrap items-center gap-3">
