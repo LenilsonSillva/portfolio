@@ -1,10 +1,16 @@
 "use client";
 
-import { motion } from "framer-motion";
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { useInViewRef } from "./RevealCSS";
-import { EASE } from "@/lib/motion";
 
+/**
+ * IntersectionObserver + CSS reveal (same system as RevealCSS).
+ *
+ * Replaces the old framer-motion whileInView implementation: the motion is
+ * compositor-driven CSS (no rAF), which keeps working reliably on iOS
+ * Safari even after the heavy intro screen — and content is never lost if
+ * JS is slow/stalled (hiding only applies under html.js-live).
+ */
 export function Reveal({
   children,
   className = "",
@@ -16,16 +22,18 @@ export function Reveal({
   delay?: number;
   y?: number;
 }) {
+  const ref = useInViewRef<HTMLDivElement>();
+  const vars: CSSProperties = { ...({} as CSSProperties) };
+  if (delay) (vars as Record<string, string>)["--d"] = `${delay}s`;
+  if (y !== 28) (vars as Record<string, string>)["--ry"] = `${y}px`;
   return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, y }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-70px" }}
-      transition={{ duration: 0.7, delay, ease: EASE }}
+    <div
+      ref={ref}
+      className={`io-scope reveal-css ${className}`}
+      style={Object.keys(vars).length ? vars : undefined}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 

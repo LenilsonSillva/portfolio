@@ -1,6 +1,6 @@
 export const en = {
   meta: {
-    name: "Lenilson Silva",
+    name: "Lenilson Oliveira",
     role: "Full Stack & Mobile Developer",
   },
   nav: {
@@ -342,7 +342,7 @@ export const en = {
       org: "Self-driven",
       place: "Porto, Portugal",
       period: "Ongoing",
-      desc: "In parallel with my professional job, I build applications and personal projects to study technologies, solve problems and turn ideas into working products.",
+      desc: "I build applications and personal projects to study technologies, solve problems and turn ideas into working products.",
       areas: [
         "Web",
         "Mobile",
@@ -530,7 +530,7 @@ export const en = {
     role: "Full Stack & Mobile Developer",
     place: "Portugal 🇵🇹",
     stack: "React · React Native · TypeScript · Next.js · Node.js",
-    rights: "© 2026 Lenilson Silva. Built with Next.js, TypeScript, Tailwind CSS & Framer Motion.",
+    rights: "© 2026 Lenilson Oliveira. Built with Next.js, TypeScript, Tailwind CSS & Framer Motion.",
     top: "Back to top",
     nav: "Navigate",
     social: "Social",

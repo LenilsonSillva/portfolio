@@ -49,13 +49,26 @@ export default function Intro({ onDone }: { onDone: () => void }) {
     };
   }, [reduced]);
 
-  // Timer-based counter (not rAF): keeps counting even on iOS devices
-  // where rAF-driven animations can stall.
+  // Wall-clock-based counter (not rAF, not tick-count based).
+  //
+  // The previous version added a fixed step per setInterval tick, so on
+  // iPhones whose timers run slower under load the counter was still
+  // ~83% when the 4050ms finish fired. Deriving pct from elapsed real
+  // time makes it reach 100 exactly at `total` ms regardless of how
+  // often the interval actually fires. The interval only triggers a
+  // repaint; it no longer defines the value.
   useEffect(() => {
     const tick = 40;
-    const step = 100 / (total / tick);
+    const start = performance.now();
+    const lastInt = { v: -1 };
     const id = setInterval(() => {
-      setPct((p) => Math.min(100, p + step));
+      const p = Math.min(100, ((performance.now() - start) / total) * 100);
+      const disp = Math.floor(p);
+      // Only re-render when the displayed integer changes.
+      if (disp !== lastInt.v) {
+        lastInt.v = disp;
+        setPct(disp);
+      }
     }, tick);
     return () => clearInterval(id);
   }, [total]);

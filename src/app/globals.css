@@ -68,10 +68,11 @@ body {
   color: transparent;
 }
 
+/* NOTE: no backdrop-filter here — real-time blur is a major source of
+   jank on iOS Safari (it is recomputed every frame while scrolling).
+   A near-opaque background reads the same at a fraction of the cost. */
 .glass {
-  background: rgba(7, 9, 16, 0.72);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(7, 9, 16, 0.92);
 }
 
 .bg-grid {
@@ -155,7 +156,7 @@ body {
 }
 .js-live .io-scope.reveal-css:not(.in-view) {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(var(--ry, 28px));
 }
 .slide-css {
   transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
@@ -276,6 +277,59 @@ body {
   animation: pulse-dot 2s ease-in-out infinite;
 }
 
+/* ---------- mobile menu (CSS-driven, iOS safe) ----------
+   No backdrop blur (full-screen real-time blur freezes low-end iPhones);
+   motion is compositor-driven CSS, no rAF. */
+@keyframes menu-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.menu-fade-in {
+  animation: menu-fade-in 0.25s ease both;
+}
+@keyframes menu-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.menu-fade-out {
+  animation: menu-fade-out 0.18s ease both;
+}
+@keyframes menu-item-in {
+  from {
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.menu-item {
+  animation: menu-item-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--d, 0s);
+}
+/* Floating PlayHome badges: CSS float instead of rAF-driven transforms. */
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+.float-badge {
+  animation: float-y 3s ease-in-out infinite;
+}
+
 /* Safety net: if the intro (JS-driven) ever fails to unmount — e.g. JS
    throttled/stalled on iOS — the overlay still fades out on its own.
    In the normal flow the overlay is already unmounted before this runs. */
@@ -307,9 +361,15 @@ body {
   .intro-line,
   .intro-fade-in,
   .intro-char,
-  .intro-exit {
+  .intro-exit,
+  .menu-fade-in,
+  .menu-fade-out,
+  .menu-item {
     animation-duration: 0.01s !important;
     animation-delay: 0s !important;
+  }
+  .float-badge {
+    animation: none !important;
   }
 }
 

@@ -2,7 +2,7 @@ import type { Dict } from "./index";
 
 export const ptPT: Dict = {
   meta: {
-    name: "Lenilson Silva",
+    name: "Lenilson Oliveira",
     role: "Full Stack & Mobile Developer",
   },
   nav: {
@@ -344,7 +344,7 @@ export const ptPT: Dict = {
       org: "Por conta própria",
       place: "Porto, Portugal",
       period: "Em curso",
-      desc: "Em paralelo ao trabalho profissional, desenvolvo aplicações e projetos próprios para estudar tecnologias, resolver problemas e transformar ideias em produtos funcionais.",
+      desc: "Desenvolvo aplicações e projetos próprios para estudar tecnologias, resolver problemas e transformar ideias em produtos funcionais.",
       areas: ["Web", "Mobile", "Full Stack", "Backend", "Realtime", "Game Dev", "APIs", "UI/UX", "Testes", "Deployment"],
     },
     highlight:
@@ -521,7 +521,7 @@ export const ptPT: Dict = {
     role: "Full Stack & Mobile Developer",
     place: "Portugal 🇵🇹",
     stack: "React · React Native · TypeScript · Next.js · Node.js",
-    rights: "© 2026 Lenilson Silva. Construído com Next.js, TypeScript, Tailwind CSS & Framer Motion.",
+    rights: "© 2026 Lenilson Oliveira. Construído com Next.js, TypeScript, Tailwind CSS & Framer Motion.",
     top: "Voltar ao topo",
     nav: "Navegar",
     social: "Social",

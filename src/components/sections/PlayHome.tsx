@@ -55,7 +55,10 @@ export default function PlayHome() {
               {p.tagline}
             </p>
           </RevealCSS>
-          <RevealCSS delay={0.16}>
+          {/* Badge is centered whenever it wraps to its own line (phones and
+              narrow tablets); at >=894px it always fits inline next to the
+              title, so no full-width row is needed there. */}
+          <RevealCSS delay={0.16} className="max-[893px]:flex max-[893px]:w-full max-[893px]:justify-center">
             <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-2 font-mono text-[10px] tracking-widest text-emerald-300 uppercase">
               <span className="animate-pulse-dot h-1.5 w-1.5 rounded-full bg-emerald-400" />
               {p.status}
@@ -132,7 +135,7 @@ export default function PlayHome() {
                       <p className="text-center text-base leading-relaxed text-paper/85 md:text-left">
                         {p.realtime.body}
                       </p>
-                      <div className="my-6 flex flex-wrap items-center gap-2 font-mono text-xs">
+                      <div className="my-6 flex flex-wrap items-center justify-center gap-2 font-mono text-xs md:justify-start">
                         {p.realtime.flow.map((f, i) => (
                           <span key={f} className="flex items-center gap-2">
                             <span className="rounded-lg border border-cyan/30 bg-cyan/[0.06] px-3 py-1.5 text-cyan">
@@ -205,7 +208,7 @@ export default function PlayHome() {
                       <p className="text-center text-base leading-relaxed text-paper/85 md:text-left">
                         {p.i18n.body}
                       </p>
-                      <div className="mt-5 flex flex-wrap gap-2">
+                      <div className="mt-5 flex flex-wrap justify-center gap-2 md:justify-start">
                         <span className="rounded-full border border-transparent bg-gradient-to-r from-violet to-cyan px-4 py-1.5 text-sm font-semibold text-[#05060b]">
                           {p.i18n.total}
                         </span>
@@ -319,7 +322,7 @@ export default function PlayHome() {
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent" />
-                  <div className="absolute left-4 top-4 z-10 flex h-14 w-14 items-center justify-center rounded-2xl border border-white/15 bg-ink/70 shadow-lg shadow-black/40 backdrop-blur-md">
+                  <div className="absolute left-4 top-4 z-10 flex h-14 w-14 items-center justify-center rounded-2xl border border-white/15 bg-ink/80 shadow-lg shadow-black/40">
                     <Image
                       src="/images/playhome-icon.png"
                       alt="PlayHome"
@@ -329,14 +332,13 @@ export default function PlayHome() {
                     />
                   </div>
                   {p.badges.map((b, i) => (
-                    <motion.span
+                    <span
                       key={b}
-                      animate={{ y: [0, -8, 0] }}
-                      transition={{ duration: 3 + i * 0.7, repeat: Infinity, ease: "easeInOut" }}
-                      className={`absolute ${badgePositions[i]} rounded-full border border-white/15 bg-ink/70 px-4 py-1.5 text-xs font-medium text-paper/90 backdrop-blur`}
+                      className={`float-badge absolute ${badgePositions[i]} rounded-full border border-white/15 bg-ink/80 px-4 py-1.5 text-xs font-medium text-paper/90`}
+                      style={{ animationDuration: `${3 + i * 0.7}s` }}
                     >
                       {b}
-                    </motion.span>
+                    </span>
                   ))}
                 </div>
               </div>
