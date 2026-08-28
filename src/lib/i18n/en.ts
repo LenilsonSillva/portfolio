@@ -55,7 +55,7 @@ export const en = {
   about: {
     index: "01",
     label: "About",
-    title: "Self-taught, object-oriented",
+    title: "Self-taught, project-driven",
     p1: "My interest in technology started with programming studies and kept growing every time I turned an idea into a project of my own.",
     p2: "During my studies at the Federal University of Rio Grande do Norte (UFRN) I met programming logic, JavaScript, C++, object-oriented programming, mobile development and React Native. I didn't finish the degree — I kept going, self-taught, moving from small experiments to complete applications: frontend, backend, databases, APIs, real-time communication, authentication, i18n, monetization and release.",
     p3: "I now live in Portugal and I'm pointing my career at software development, looking for my first professional opportunity in the area.",
