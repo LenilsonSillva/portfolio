@@ -21,7 +21,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://portfolio-rouge-three-50.vercel.app"),
+  metadataBase: new URL("https://lenilsons.vercel.app"),
   title: "Lenilson Oliveira — Full Stack & Mobile Developer",
   description:
     "Portfolio of Lenilson Oliveira, full stack & mobile developer based in Porto, Portugal. React, Next.js, TypeScript, React Native and Node.js — creator of PlayHome, a multiplayer social gaming platform published on Google Play.",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: "Lenilson Oliveira — Full Stack & Mobile Developer",
     description:
       "Full stack & mobile developer in Porto, Portugal. Creator of PlayHome — a multiplayer social gaming platform published on Google Play.",
-    url: "https://portfolio-rouge-three-50.vercel.app",
+    url: "https://lenilsons.vercel.app",
     images: [
       {
         url: "/images/playhome-key.jpg",

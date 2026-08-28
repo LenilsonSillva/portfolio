@@ -15,7 +15,7 @@ export const links = {
   playHomeWebRepo: "https://github.com/LenilsonSillva/PlayHome-Website",
   playHomeBackendRepo: "https://github.com/LenilsonSillva/PlayHome-backend",
   udemy: "https://www.udemy.com/course/curso-de-reactjs-nextjs-completo-do-basico-ao-avancado/",
-  vercel: "https://portfolio-rouge-three-50.vercel.app/",
+  vercel: "https://lenilsons.vercel.app/",
 };
 
 export const repos: Record<string, string> = {

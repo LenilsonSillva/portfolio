@@ -2,7 +2,7 @@
 
 > Full Stack & Mobile Developer · Portugal 🇵🇹
 >
-> **🌐 Online: [https://portfolio-rouge-three-50.vercel.app](https://portfolio-rouge-three-50.vercel.app)**
+> **🌐 Online: [https://lenilsons.vercel.app](https://lenilsons.vercel.app)**
 
 Portfólio pessoal profissional construído com **Next.js (App Router)**, **TypeScript**, **Tailwind CSS** e **Framer Motion** — uma página única, animada, com introdução em ecrãs, transições suaves entre seções e suporte **bilingue (EN / PT)**.
 
@@ -71,7 +71,7 @@ vercel
 
 ## 🔗 Links
 
-- [Portfólio (Vercel)](https://portfolio-rouge-three-50.vercel.app)
+- [Portfólio (Vercel)](https://lenilsons.vercel.app)
 - [PlayHome — Google Play](https://play.google.com/store/apps/details?id=com.usuper.playhome)
 - [PlayHome — Website](https://play-home-iota.vercel.app/)
 - [PlayHome — Website (código)](https://github.com/LenilsonSillva/PlayHome-Website)
