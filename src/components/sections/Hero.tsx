@@ -38,7 +38,7 @@ export default function Hero({ introDone }: { introDone: boolean }) {
       />
 
       <div className={`hero ${containerClass} relative z-10 mx-auto w-full max-w-6xl px-5 md:px-8`}>
-        <div className="hero-item mb-8 flex flex-wrap items-center gap-3" style={d(0.15)}>
+        <div className="hero-item mb-8 flex flex-wrap items-center gap-3" style={d(0.05)}>
           <span className="inline-flex items-center gap-2.5 rounded-full border border-line bg-white/[0.03] px-4 py-1.5 text-sm text-paper/90">
             <span className="animate-pulse-dot h-1.5 w-1.5 rounded-full bg-emerald-400" />
             {t.hero.available}
@@ -50,12 +50,12 @@ export default function Hero({ introDone }: { introDone: boolean }) {
 
         <h1 className="font-display text-[clamp(2.7rem,9vw,6.5rem)] leading-[0.95] font-bold tracking-tight">
           <span className="block overflow-hidden">
-            <span className="hero-item block text-paper" style={d(0.27)}>
+            <span className="hero-item block text-paper" style={d(0.12)}>
               {t.hero.titleA}
             </span>
           </span>
           <span className="block overflow-hidden">
-            <span className="hero-item text-gradient block" style={d(0.39)}>
+            <span className="hero-item text-gradient block" style={d(0.19)}>
               {t.hero.titleB}
             </span>
           </span>
@@ -63,7 +63,7 @@ export default function Hero({ introDone }: { introDone: boolean }) {
 
         <p
           className="hero-item mt-7 max-w-2xl text-lg leading-relaxed text-muted"
-          style={d(0.51)}
+          style={d(0.26)}
         >
           {t.hero.sub}
         </p>
@@ -77,7 +77,7 @@ export default function Hero({ introDone }: { introDone: boolean }) {
 
         <div
           className="hero-item mt-9 flex flex-wrap items-center justify-center gap-4 md:justify-start"
-          style={d(0.75)}
+          style={d(0.4)}
         >
           <Magnetic>
             <a
@@ -100,7 +100,7 @@ export default function Hero({ introDone }: { introDone: boolean }) {
 
         <p
           className="hero-item mt-8 text-center font-mono text-xs uppercase tracking-[0.25em] text-muted md:text-left"
-          style={d(0.87)}
+          style={d(0.47)}
         >
           {t.hero.workModel}
         </p>
@@ -108,7 +108,7 @@ export default function Hero({ introDone }: { introDone: boolean }) {
 
       {/* scroll hint */}
       <div className="relative z-10 mx-auto mt-14 w-full max-w-6xl px-5 md:px-8">
-        <div className="intro-fade-in" style={d(1.6)}>
+        <div className="intro-fade-in" style={d(1.1)}>
           <div className="flex justify-center">
             <div className="flex flex-col items-center gap-2 text-muted">
               <span className="font-mono text-[10px] uppercase tracking-[0.3em]">

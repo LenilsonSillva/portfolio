@@ -53,10 +53,13 @@ export default function Intro({ onDone }: { onDone: () => void }) {
   //
   // The previous version added a fixed step per setInterval tick, so on
   // iPhones whose timers run slower under load the counter was still
-  // ~83% when the 4050ms finish fired. Deriving pct from elapsed real
-  // time makes it reach 100 exactly at `total` ms regardless of how
-  // often the interval actually fires. The interval only triggers a
-  // repaint; it no longer defines the value.
+  // ~83% when the finish fired. Deriving pct from elapsed real time makes
+  // it reach 100 exactly at `total` ms regardless of tick frequency.
+  //
+  // finish() is called in the SAME tick that paints "100%": the exit
+  // transition and the hero entrance therefore start in the exact frame
+  // the counter completes — no "stuck at 100%" pause. The 4050ms timeout
+  // in the phase effect remains as a safety net if this interval dies.
   useEffect(() => {
     const tick = 40;
     const start = performance.now();
@@ -69,14 +72,18 @@ export default function Intro({ onDone }: { onDone: () => void }) {
         lastInt.v = disp;
         setPct(disp);
       }
+      if (p >= 100) {
+        clearInterval(id);
+        finishRef.current();
+      }
     }, tick);
     return () => clearInterval(id);
   }, [total]);
 
-  // Unmount after the CSS exit animation finishes (~0.9s).
+  // Unmount after the (short) CSS exit animation finishes.
   useEffect(() => {
     if (!done) return;
-    const t = setTimeout(() => setGone(true), 1000);
+    const t = setTimeout(() => setGone(true), 750);
     return () => clearTimeout(t);
   }, [done]);
 

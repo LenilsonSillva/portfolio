@@ -238,16 +238,22 @@ body {
   animation: char-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
   animation-delay: var(--d, 0s);
 }
+/* Fast crossfade-up exit: triggered in the same frame the counter hits
+   100%, while the hero entrance plays underneath — content appears the
+   instant loading completes, with a short animated transition. */
 @keyframes intro-exit {
   from {
+    opacity: 1;
     transform: none;
   }
   to {
-    transform: translateY(-100%);
+    opacity: 0;
+    transform: translateY(-8%);
   }
 }
 .intro-exit {
-  animation: intro-exit 0.85s cubic-bezier(0.76, 0, 0.24, 1) 0.05s both;
+  animation: intro-exit 0.55s cubic-bezier(0.4, 0, 1, 1) both;
+  pointer-events: none;
 }
 
 @keyframes blink {
@@ -277,44 +283,36 @@ body {
   animation: pulse-dot 2s ease-in-out infinite;
 }
 
-/* ---------- mobile menu (CSS-driven, iOS safe) ----------
-   No backdrop blur (full-screen real-time blur freezes low-end iPhones);
-   motion is compositor-driven CSS, no rAF. */
-@keyframes menu-fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+/* ---------- mobile menu (pre-rendered, class-toggle, iOS safe) ----------
+   The menu lives in the DOM from page load (visibility:hidden) so opening
+   it is a single class flip: no subtree insertion, no React re-layout of
+   the menu content. On slow iPhones the old mount-on-tap pattern (plus
+   per-item staggered delays) made the menu and its items take seconds to
+   appear. No backdrop blur: full-screen real-time blur freezes low-end
+   iPhones. */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.18s ease,
+    visibility 0s linear 0.18s;
 }
-.menu-fade-in {
-  animation: menu-fade-in 0.25s ease both;
+.mobile-menu.is-open {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transition:
+    opacity 0.22s ease,
+    visibility 0s;
 }
-@keyframes menu-fade-out {
-  from {
-    opacity: 1;
+@media (min-width: 1024px) {
+  .mobile-menu {
+    display: none;
   }
-  to {
-    opacity: 0;
-  }
-}
-.menu-fade-out {
-  animation: menu-fade-out 0.18s ease both;
-}
-@keyframes menu-item-in {
-  from {
-    opacity: 0;
-    transform: translateX(-18px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-.menu-item {
-  animation: menu-item-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
-  animation-delay: var(--d, 0s);
 }
 /* Floating PlayHome badges: CSS float instead of rAF-driven transforms. */
 @keyframes float-y {
@@ -361,12 +359,12 @@ body {
   .intro-line,
   .intro-fade-in,
   .intro-char,
-  .intro-exit,
-  .menu-fade-in,
-  .menu-fade-out,
-  .menu-item {
+  .intro-exit {
     animation-duration: 0.01s !important;
     animation-delay: 0s !important;
+  }
+  .mobile-menu {
+    transition-duration: 0.01s !important;
   }
   .float-badge {
     animation: none !important;
