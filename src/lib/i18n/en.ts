@@ -142,11 +142,11 @@ export const en = {
   playhome: {
     index: "03",
     kicker: "Featured Project",
-    tagline: "Social multiplayer gaming · Android & Web",
+    tagline: "Social multiplayer gaming · Mobile & Web",
     status: "Published · in continuous development",
     meta: [
       { k: "Category", v: "Personal product" },
-      { k: "Platforms", v: "Android · Web" },
+      { k: "Platforms", v: "Mobile · Web" },
     ],
     lead: "A social gaming platform for quick, fun matches between friends — combining offline games and online multiplayer. It started as a personal idea and evolved into a complete product spanning mobile, web and backend.",
     badges: ["Realtime lobbies", "Multi-language", "Monetized"],
