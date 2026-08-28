@@ -14,7 +14,7 @@ Portfólio pessoal profissional construído com **Next.js (App Router)**, **Type
 - 🌐 **i18n EN / PT-BR / PT-PT** — deteção automática do idioma do sistema (pt-BR → pt-BR, pt-PT → pt-PT, resto → inglês) + alternância manual no menu, persistida em `localStorage` (o mesmo conceito aplicado no PlayHome);
 - 📱 **Totalmente responsivo** — do mobile ao desktop, com menu em *overlay* animado;
 - ♿ **Acessibilidade** — respeita `prefers-reduced-motion`, navegação por âncoras e HTML semântico;
-- ⚡ **Next.js App Router** — pronto para deploy na Vercel.
+- ⚡ **Next.js App Router**
 
 ## 🧱 Stack
 
@@ -25,21 +25,6 @@ Portfólio pessoal profissional construído com **Next.js (App Router)**, **Type
 | Estilos    | Tailwind CSS v4                                    |
 | Animações  | Framer Motion 13                                   |
 | Fontes     | Space Grotesk · Inter · JetBrains Mono (next/font) |
-
-## 🚀 Como correr
-
-```bash
-npm install
-npm run dev
-# http://localhost:3000
-```
-
-Build de produção:
-
-```bash
-npm run build
-npm start
-```
 
 ## 📁 Estrutura
 
