@@ -60,15 +60,6 @@ src/
 10. **What I'm looking for** — posições de interesse
 11. **Contact** — email, WhatsApp e redes sociais
 
-## 🌐 Deploy
-
-Pronto para a [Vercel](https://vercel.com):
-
-```bash
-npm i -g vercel
-vercel
-```
-
 ## 🔗 Links
 
 - [Portfólio (Vercel)](https://lenilsons.vercel.app)
