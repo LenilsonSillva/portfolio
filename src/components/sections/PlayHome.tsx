@@ -45,7 +45,7 @@ export default function PlayHome() {
               className="relative h-16 w-16 rounded-2xl border border-white/10 sm:h-24 sm:w-24 md:h-28 md:w-28"
             />
           </RevealCSS>
-          <RevealCSS delay={0.08} className="min-w-0 flex-1">
+          <RevealCSS delay={0.08} className="min-w-0 flex-1 md:min-w-[340px]">
             <div className="overflow-hidden">
               <h2 className="slide-css font-display text-5xl font-bold tracking-tight text-paper sm:text-6xl md:text-7xl">
                 Play<span className="text-gradient">Home</span>
