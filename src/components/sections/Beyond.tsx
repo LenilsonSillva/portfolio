@@ -12,7 +12,7 @@ export default function Beyond() {
     <section id="beyond" className="relative overflow-hidden py-20 md:py-28">
       <div
         aria-hidden
-        className="absolute top-1/3 left-[-15%] h-72 w-72 rounded-full bg-violet/10 blur-[90px] md:h-[420px] md:w-[420px] md:blur-[130px]"
+        className="glow absolute top-1/3 left-[-15%] h-72 w-72 rounded-full bg-violet/10 blur-[90px] md:h-[420px] md:w-[420px] md:blur-[130px]"
       />
       <div className="relative mx-auto max-w-6xl px-5 md:px-8">
         <SectionHeader index={b.index} label={b.label} title={b.title} />

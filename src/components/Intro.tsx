@@ -99,7 +99,7 @@ export default function Intro({ onDone }: { onDone: () => void }) {
     >
       {phase === "boot" ? (
         <div className="intro-fade-in absolute inset-0 flex flex-col justify-between p-6 md:p-10">
-          <div className="font-mono text-[13px] leading-relaxed">
+          <div className="font-mono text-[8px] leading-relaxed min-[340px]:text-[9px] min-[380px]:text-[10px] sm:text-[12px] md:text-[13px]">
             {t.intro.terminal.map((line, i) => (
               <p
                 key={i}
@@ -119,7 +119,7 @@ export default function Intro({ onDone }: { onDone: () => void }) {
         <div className="intro-fade-in absolute inset-0 flex flex-col p-6 md:p-10">
           <div className="flex flex-1 flex-col items-center justify-center">
             <div className="overflow-hidden">
-              <h1 className="font-display text-4xl font-bold tracking-tight text-paper sm:text-6xl md:text-7xl">
+              <h1 className="font-display font-bold tracking-tight text-paper text-[clamp(18px,8vw,72px)]">
                 {t.intro.name.split("").map((ch, i) => (
                   <span key={i} className="intro-char" style={d(0.15 + i * 0.045)}>
                     {ch === " " ? "\u00A0" : ch}
@@ -128,7 +128,7 @@ export default function Intro({ onDone }: { onDone: () => void }) {
               </h1>
             </div>
             <p
-              className="intro-fade-in mt-7 text-center font-mono text-[11px] uppercase tracking-[0.45em] text-muted md:text-xs"
+              className="intro-fade-in mt-7 text-center font-mono text-[9px] uppercase tracking-[0.3em] text-muted min-[440px]:text-[11px] min-[440px]:tracking-[0.45em] md:text-xs"
               style={d(1.0)}
             >
               {t.intro.role}

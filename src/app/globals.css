@@ -378,3 +378,23 @@ body {
     display: none;
   }
 }
+
+/* ---------- iOS Safari: fluidity (html.ios only) ----------
+   Shell adds the `ios` class on the client when the UA is iPhone/iPad
+   (iPadOS 13+ reports as Mac with touch). Every rule below is scoped to
+   .ios, so Android and desktop render exactly as before.
+   - .animate-pulse-dot: the ONLY always-on animation that repaints
+     (box-shadow) instead of running on the compositor. WebKit re-rasters
+     it every frame; a static dot reads the same at zero cost.
+   - .glow / marquee / float badges: promote always-moving (or heavily
+     blurred) elements to their own compositor layer, so WebKit does not
+     re-rasterize the big blur radii while the finger scrolls. */
+.ios .animate-pulse-dot {
+  animation: none;
+}
+.ios .animate-marquee,
+.ios .float-badge,
+.ios .hero-scroll-bar,
+.ios .glow {
+  will-change: transform;
+}

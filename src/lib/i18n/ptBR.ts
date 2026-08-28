@@ -144,11 +144,11 @@ export const ptBR: Dict = {
   playhome: {
     index: "03",
     kicker: "Projeto em destaque",
-    tagline: "Jogos sociais multiplayer · Android & Web",
+    tagline: "Jogos sociais multiplayer · Mobile & Web",
     status: "Publicado · em desenvolvimento contínuo",
     meta: [
       { k: "Categoria", v: "Produto próprio" },
-      { k: "Plataformas", v: "Android · Web" },
+      { k: "Plataformas", v: "Mobile · Web" },
     ],
     lead: "Uma plataforma de jogos sociais para partidas rápidas e divertidas entre amigos — combinando jogos offline e multiplayer online. Começou como uma ideia pessoal e evoluiu para um produto completo que envolve mobile, web e backend.",
     badges: ["Lobbies em tempo real", "Multi-idioma", "Monetizado"],
@@ -161,7 +161,7 @@ export const ptBR: Dict = {
       { id: "release", label: "Publicação" },
     ],
     overview: {
-      body: "O PlayHome traz hoje dois jogos sociais — Impostor e Criptografia — além da infraestrutura completa que os suporta: salas e lobbies em tempo real, internacionalização, autenticação, monetização e clientes cross-platform para Android e web.",
+      body: "O PlayHome traz hoje dois jogos sociais — Impostor e Criptografia — além da infraestrutura completa que os suporta: salas e lobbies em tempo real, internacionalização, autenticação, monetização e clientes cross-platform para mobile e web.",
       features: [
         "Jogos offline",
         "Multiplayer online",
@@ -426,7 +426,7 @@ export const ptBR: Dict = {
       {
         icon: "🎮",
         title: "PlayHome",
-        text: "Criação da minha própria plataforma de jogos sociais multiplayer para Android e Web — publicada na Google Play.",
+        text: "Criação da minha própria plataforma de jogos sociais multiplayer para mobile e web — publicada na Google Play.",
       },
       {
         icon: "📚",
@@ -476,7 +476,7 @@ export const ptBR: Dict = {
     creativity: {
       title: "Criatividade além da programação",
       text: "A música também influencia a maneira como penso sobre tecnologia. Assim como em um projeto de software, gosto de experimentar, testar possibilidades, ajustar detalhes e transformar uma ideia inicial em algo funcional. Para mim, programação e música têm algo em comum: ambas permitem transformar uma ideia abstrata em algo que pode ser experimentado por outras pessoas.",
-      quote: "Code is how I build. Music is how I create.",
+      quote: "Código é como eu construo. Música é como eu crio.",
     },
   },
   looking: {

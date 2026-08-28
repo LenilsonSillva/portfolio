@@ -16,7 +16,7 @@ export default function Contact() {
     <section id="contact" className="relative overflow-hidden py-20 md:py-28">
       <div
         aria-hidden
-        className="absolute top-1/2 left-1/2 h-72 w-[440px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet/15 blur-[100px] md:h-[420px] md:w-[720px] md:blur-[140px]"
+        className="glow absolute top-1/2 left-1/2 h-72 w-[440px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet/15 blur-[100px] md:h-[420px] md:w-[720px] md:blur-[140px]"
       />
       <div className="relative mx-auto max-w-6xl px-5 md:px-8">
         <SectionKicker index={c.index} label={c.kicker} />
@@ -24,13 +24,13 @@ export default function Contact() {
         <div className="mx-auto max-w-3xl text-center">
           <RevealCSS>
             <div className="overflow-hidden">
-              <h2 className="slide-css font-display text-4xl font-bold tracking-tight text-paper md:text-5xl lg:text-6xl">
+              <h2 className="slide-css font-display text-[32px] font-bold tracking-tight text-paper min-[420px]:text-4xl md:text-5xl lg:text-6xl">
                 {c.titleA}
               </h2>
             </div>
             <div className="overflow-hidden">
               <h2
-                className="slide-css text-gradient font-display text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
+                className="slide-css text-gradient font-display text-[32px] font-bold tracking-tight min-[420px]:text-4xl md:text-5xl lg:text-6xl"
                 style={{ "--sd": "0.14s" } as CSSProperties}
               >
                 {c.titleB}

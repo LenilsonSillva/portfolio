@@ -33,6 +33,18 @@ export default function Shell() {
     return () => clearTimeout(t);
   }, []);
 
+  // iOS Safari only: mark <html> with `ios` so globals.css can apply
+  // WebKit-specific fluidity tweaks (compositor layers, no per-frame
+  // repaint animations). Android/desktop never get the class — the page
+  // is identical everywhere else.
+  useEffect(() => {
+    const ua = navigator.userAgent || "";
+    const ios =
+      /iP(hone|od|ad)/.test(ua) ||
+      (ua.includes("Mac") && (navigator.maxTouchPoints ?? 0) > 1);
+    if (ios) document.documentElement.classList.add("ios");
+  }, []);
+
   useEffect(() => {
     document.documentElement.style.overflow = introDone ? "" : "hidden";
     if (introDone) {

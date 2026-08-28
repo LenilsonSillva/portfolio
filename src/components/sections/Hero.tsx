@@ -30,11 +30,11 @@ export default function Hero({ introDone }: { introDone: boolean }) {
       />
       <div
         aria-hidden
-        className="absolute -top-40 left-1/2 h-80 w-[480px] -translate-x-1/2 rounded-full bg-violet/20 blur-[100px] md:h-[520px] md:w-[820px] md:blur-[140px]"
+        className="glow absolute -top-40 left-1/2 h-80 w-[480px] -translate-x-1/2 rounded-full bg-violet/20 blur-[100px] md:h-[520px] md:w-[820px] md:blur-[140px]"
       />
       <div
         aria-hidden
-        className="absolute right-[-10%] bottom-0 h-64 w-[360px] rounded-full bg-cyan/10 blur-[90px] md:h-[420px] md:w-[520px] md:blur-[130px]"
+        className="glow absolute right-[-10%] bottom-0 h-64 w-[360px] rounded-full bg-cyan/10 blur-[90px] md:h-[420px] md:w-[520px] md:blur-[130px]"
       />
 
       <div className={`hero ${containerClass} relative z-10 mx-auto w-full max-w-6xl px-5 md:px-8`}>

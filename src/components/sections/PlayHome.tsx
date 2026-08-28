@@ -30,12 +30,14 @@ export default function PlayHome() {
         {/* Header: 03 — FEATURED PROJECT */}
         <SectionKicker index={p.index} label={p.kicker} className="mb-8 md:mb-12" />
 
-        {/* Icon + PLAYHOME */}
-        <div className="flex flex-wrap items-center gap-5 md:gap-7">
+        {/* Icon + PLAYHOME — on phones the icon stacks above the title so
+            the tagline gets the full width (next to the 64px icon there
+            is not enough room for one line on small screens). */}
+        <div className="flex flex-wrap items-center gap-5 md:gap-7 max-[600px]:flex-col">
           <RevealCSS className="relative shrink-0">
             <div
               aria-hidden
-              className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-fuchsia-500/30 to-cyan-400/30 blur-xl"
+              className="glow absolute -inset-3 rounded-3xl bg-gradient-to-br from-fuchsia-500/30 to-cyan-400/30 blur-xl"
             />
             <Image
               src="/images/playhome-icon.png"
@@ -51,7 +53,7 @@ export default function PlayHome() {
                 Play<span className="text-gradient">Home</span>
               </h2>
             </div>
-            <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.3em] text-muted">
+            <p className="mt-2 font-mono text-[9px] uppercase tracking-[0.22em] text-muted min-[440px]:text-[11px] min-[440px]:tracking-[0.3em] max-[359px]:text-[8px]">
               {p.tagline}
             </p>
           </RevealCSS>
@@ -59,7 +61,7 @@ export default function PlayHome() {
               narrow tablets); at >=894px it always fits inline next to the
               title, so no full-width row is needed there. */}
           <RevealCSS delay={0.16} className="max-[893px]:flex max-[893px]:w-full max-[893px]:justify-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-2 font-mono text-[10px] tracking-widest text-emerald-300 uppercase">
+            <span className="inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3.5 py-2 font-mono text-[9px] tracking-[0.08em] text-emerald-300 uppercase max-[359px]:text-[8px] max-[359px]:tracking-[0.05em] min-[420px]:px-4 min-[420px]:text-[10px] min-[420px]:tracking-widest">
               <span className="animate-pulse-dot h-1.5 w-1.5 rounded-full bg-emerald-400" />
               {p.status}
             </span>
@@ -311,7 +313,7 @@ export default function PlayHome() {
               <div className="relative">
                 <div
                   aria-hidden
-                  className="absolute -inset-4 rounded-[28px] bg-gradient-to-br from-violet/30 to-cyan/20 blur-2xl"
+                  className="glow absolute -inset-4 rounded-[28px] bg-gradient-to-br from-violet/30 to-cyan/20 blur-2xl"
                 />
                 <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-line">
                   <Image

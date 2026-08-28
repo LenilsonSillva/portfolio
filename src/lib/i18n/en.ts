@@ -159,7 +159,7 @@ export const en = {
       { id: "release", label: "Release" },
     ],
     overview: {
-      body: "PlayHome brings two social games today — Impostor and Criptografia — plus the complete infrastructure that supports them: realtime rooms and lobbies, internationalization, authentication, monetization and cross-platform clients for Android and the web.",
+      body: "PlayHome brings two social games today — Impostor and Criptografia — plus the complete infrastructure that supports them: realtime rooms and lobbies, internationalization, authentication, monetization and cross-platform clients for mobile and the web.",
       features: [
         "Offline games",
         "Online multiplayer",
@@ -435,7 +435,7 @@ export const en = {
       {
         icon: "🎮",
         title: "PlayHome",
-        text: "Built my own social multiplayer gaming platform for Android and Web — and published it on Google Play.",
+        text: "Built my own social multiplayer gaming platform for mobile and web — and published it on Google Play.",
       },
       {
         icon: "📚",

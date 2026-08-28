@@ -20,7 +20,7 @@ export default function About() {
               <div className="relative">
                 <div
                   aria-hidden
-                  className="absolute -inset-4 rounded-[32px] bg-gradient-to-br from-violet/25 to-cyan/15 blur-2xl"
+                  className="glow absolute -inset-4 rounded-[32px] bg-gradient-to-br from-violet/25 to-cyan/15 blur-2xl"
                 />
                 <div className="relative overflow-hidden rounded-3xl border border-line">
                   <div className="relative aspect-[4/5]">
