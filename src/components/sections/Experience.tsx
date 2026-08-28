@@ -9,7 +9,7 @@ export default function Experience() {
   const inc = x.independent;
 
   return (
-    <section id="experience" className="relative py-24 md:py-32">
+    <section id="experience" className="relative py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <SectionHeader index={x.index} label={x.label} title={x.title} />
 

@@ -25,8 +25,10 @@ export default function Shell() {
 
   // Safety net: the intro always finishes by itself (~4s). If timers are
   // throttled or the sequence stalls (iOS Safari), never keep the page
-  // hidden for longer than 6s.
+  // hidden for longer than 6s. Also marks that JS is alive so the
+  // CSS reveal system may hide not-yet-revealed content.
   useEffect(() => {
+    document.documentElement.classList.add("js-live");
     const t = setTimeout(() => setIntroDone(true), 6000);
     return () => clearTimeout(t);
   }, []);

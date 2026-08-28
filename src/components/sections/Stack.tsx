@@ -9,7 +9,7 @@ export default function StackSection() {
   const s = t.stack;
 
   return (
-    <section id="stack" className="relative py-24 md:py-32">
+    <section id="stack" className="relative py-20 md:py-28">
       <div
         aria-hidden
         className="absolute top-1/3 left-[-15%] h-[420px] w-[420px] rounded-full bg-violet/10 blur-[130px]"

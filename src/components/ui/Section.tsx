@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
+import { useInViewRef } from "./RevealCSS";
 import { EASE } from "@/lib/motion";
 
 export function Reveal({
@@ -58,17 +59,12 @@ export function SectionKicker({
 }
 
 export function SectionTitle({ title }: { title: string }) {
+  const ref = useInViewRef<HTMLDivElement>();
   return (
-    <div className="overflow-hidden">
-      <motion.h2
-        initial={{ y: "110%" }}
-        whileInView={{ y: "0%" }}
-        viewport={{ once: true, margin: "-70px" }}
-        transition={{ duration: 0.9, ease: EASE }}
-        className="font-display text-4xl font-bold tracking-tight text-paper md:text-5xl lg:text-6xl"
-      >
+    <div ref={ref} className="io-scope overflow-hidden">
+      <h2 className="slide-css font-display text-4xl font-bold tracking-tight text-paper md:text-5xl lg:text-6xl">
         {title}
-      </motion.h2>
+      </h2>
     </div>
   );
 }

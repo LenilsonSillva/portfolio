@@ -143,6 +143,112 @@ body {
   animation-play-state: paused;
 }
 
+/* ---------- reveal system (IntersectionObserver + CSS) ----------
+   Hiding only applies when JS is alive (html.js-live), so content is
+   never lost if JS fails. The motion itself is pure CSS (compositor),
+   which is far more reliable on iOS than rAF-driven transforms. */
+.reveal-css {
+  transition:
+    opacity 0.7s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--d, 0s);
+}
+.js-live .io-scope.reveal-css:not(.in-view) {
+  opacity: 0;
+  transform: translateY(28px);
+}
+.slide-css {
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--sd, 0.08s);
+}
+.js-live .io-scope:not(.in-view) .slide-css {
+  transform: translateY(110%);
+}
+
+/* ---------- hero entrance (CSS-driven, iOS safe) ---------- */
+@keyframes hero-item-in {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.intro-live .hero-item {
+  opacity: 0;
+}
+.intro-live.is-done .hero-item {
+  animation: hero-item-in 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--d, 0s);
+}
+@keyframes scroll-bar {
+  0% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(32px);
+  }
+}
+.hero-scroll-bar {
+  animation: scroll-bar 1.4s ease-in-out infinite;
+}
+
+/* ---------- intro (CSS-driven) ---------- */
+@keyframes line-in {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.intro-line {
+  animation: line-in 0.35s ease both;
+  animation-delay: var(--d, 0s);
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.intro-fade-in {
+  animation: fade-in 0.5s ease both;
+  animation-delay: var(--d, 0s);
+}
+@keyframes char-in {
+  from {
+    opacity: 0;
+    transform: translateY(110%);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.intro-char {
+  display: inline-block;
+  animation: char-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--d, 0s);
+}
+@keyframes intro-exit {
+  from {
+    transform: none;
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+.intro-exit {
+  animation: intro-exit 0.85s cubic-bezier(0.76, 0, 0.24, 1) 0.05s both;
+}
+
 @keyframes blink {
   0%,
   49% {
@@ -191,5 +297,26 @@ body {
   .animate-blink,
   .animate-pulse-dot {
     animation: none;
+  }
+  .reveal-css,
+  .slide-css {
+    transition-duration: 0.01s !important;
+    transition-delay: 0s !important;
+  }
+  .hero-item,
+  .intro-line,
+  .intro-fade-in,
+  .intro-char,
+  .intro-exit {
+    animation-duration: 0.01s !important;
+    animation-delay: 0s !important;
+  }
+}
+
+/* The fullscreen SVG-noise layer is expensive for iOS compositors;
+   it is invisible at its 0.045 opacity, so disable it on mobile. */
+@media (max-width: 767px) {
+  .noise-layer {
+    display: none;
   }
 }

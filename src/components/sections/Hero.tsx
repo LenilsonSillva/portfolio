@@ -1,20 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion, type Variants } from "framer-motion";
+import { useEffect, useState, type CSSProperties } from "react";
 import { useLang } from "../providers/LanguageContext";
 import { Magnetic } from "../ui/Magnetic";
-import { EASE } from "@/lib/motion";
 
-const container: Variants = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.12, delayChildren: 0.15 } },
-};
-
-const item: Variants = {
-  hidden: { opacity: 0, y: 32 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.9, ease: EASE } },
-};
+const d = (s: number) => ({ "--d": `${s}s` }) as CSSProperties;
 
 export default function Hero({ introDone }: { introDone: boolean }) {
   const { t } = useLang();
@@ -22,10 +12,11 @@ export default function Hero({ introDone }: { introDone: boolean }) {
 
   useEffect(() => setMounted(true), []);
 
-  // While the intro plays (client only), the hero is hidden. The server
-  // render keeps it fully visible so the page can never stay black if JS
-  // is slow or unavailable (iOS): the opaque intro overlay covers it.
-  const phase = introDone || !mounted ? "show" : "hidden";
+  // SSR / no-JS: no class → hero fully visible (the page can never be
+  // left black). While the intro plays (client only): items are hidden
+  // behind the opaque overlay. When the intro ends: items rise in via
+  // pure CSS animations (compositor-driven, immune to iOS rAF stalls).
+  const containerClass = !mounted ? "" : introDone ? "intro-live is-done" : "intro-live";
 
   return (
     <section
@@ -39,20 +30,15 @@ export default function Hero({ introDone }: { introDone: boolean }) {
       />
       <div
         aria-hidden
-        className="absolute -top-40 left-1/2 h-[520px] w-[820px] -translate-x-1/2 rounded-full bg-violet/20 blur-[140px]"
+        className="absolute -top-40 left-1/2 h-80 w-[480px] -translate-x-1/2 rounded-full bg-violet/20 blur-[100px] md:h-[520px] md:w-[820px] md:blur-[140px]"
       />
       <div
         aria-hidden
-        className="absolute right-[-10%] bottom-0 h-[420px] w-[520px] rounded-full bg-cyan/10 blur-[130px]"
+        className="absolute right-[-10%] bottom-0 h-64 w-[360px] rounded-full bg-cyan/10 blur-[90px] md:h-[420px] md:w-[520px] md:blur-[130px]"
       />
 
-      <motion.div
-        variants={container}
-        initial={mounted ? "hidden" : "show"}
-        animate={phase}
-        className="relative z-10 mx-auto w-full max-w-6xl px-5 md:px-8"
-      >
-        <motion.div variants={item} className="mb-8 flex flex-wrap items-center gap-3">
+      <div className={`hero ${containerClass} relative z-10 mx-auto w-full max-w-6xl px-5 md:px-8`}>
+        <div className="hero-item mb-8 flex flex-wrap items-center gap-3" style={d(0.15)}>
           <span className="inline-flex items-center gap-2.5 rounded-full border border-line bg-white/[0.03] px-4 py-1.5 text-sm text-paper/90">
             <span className="animate-pulse-dot h-1.5 w-1.5 rounded-full bg-emerald-400" />
             {t.hero.available}
@@ -60,38 +46,38 @@ export default function Hero({ introDone }: { introDone: boolean }) {
           <span className="font-mono text-xs uppercase tracking-[0.25em] text-muted">
             📍 {t.hero.location}
           </span>
-        </motion.div>
+        </div>
 
         <h1 className="font-display text-[clamp(2.7rem,9vw,6.5rem)] leading-[0.95] font-bold tracking-tight">
           <span className="block overflow-hidden">
-            <motion.span variants={item} className="block text-paper">
+            <span className="hero-item block text-paper" style={d(0.27)}>
               {t.hero.titleA}
-            </motion.span>
+            </span>
           </span>
           <span className="block overflow-hidden">
-            <motion.span variants={item} className="text-gradient block">
+            <span className="hero-item text-gradient block" style={d(0.39)}>
               {t.hero.titleB}
-            </motion.span>
+            </span>
           </span>
         </h1>
 
-        <motion.p
-          variants={item}
-          className="mt-7 max-w-2xl text-lg leading-relaxed text-muted"
+        <p
+          className="hero-item mt-7 max-w-2xl text-lg leading-relaxed text-muted"
+          style={d(0.51)}
         >
           {t.hero.sub}
-        </motion.p>
+        </p>
 
-        <motion.p
-          variants={item}
-          className="mt-4 max-w-2xl text-sm leading-relaxed text-muted/80"
+        <p
+          className="hero-item mt-4 max-w-2xl text-sm leading-relaxed text-muted/80"
+          style={d(0.63)}
         >
           {t.hero.body}
-        </motion.p>
+        </p>
 
-        <motion.div
-          variants={item}
-          className="mt-9 flex flex-wrap items-center justify-center gap-4 md:justify-start"
+        <div
+          className="hero-item mt-9 flex flex-wrap items-center justify-center gap-4 md:justify-start"
+          style={d(0.75)}
         >
           <Magnetic>
             <a
@@ -110,38 +96,31 @@ export default function Hero({ introDone }: { introDone: boolean }) {
               {t.hero.ctaContact}
             </a>
           </Magnetic>
-        </motion.div>
+        </div>
 
-        <motion.p
-          variants={item}
-          className="mt-8 text-center font-mono text-xs uppercase tracking-[0.25em] text-muted md:text-left"
+        <p
+          className="hero-item mt-8 text-center font-mono text-xs uppercase tracking-[0.25em] text-muted md:text-left"
+          style={d(0.87)}
         >
           {t.hero.workModel}
-        </motion.p>
-      </motion.div>
+        </p>
+      </div>
 
       {/* scroll hint */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={introDone ? { opacity: 1 } : {}}
-        transition={{ delay: 1.4, duration: 0.8, ease: EASE }}
-        className="relative z-10 mx-auto mt-14 w-full max-w-6xl px-5 md:px-8"
-      >
-        <div className="flex justify-center">
-          <div className="flex flex-col items-center gap-2 text-muted">
-            <span className="font-mono text-[10px] uppercase tracking-[0.3em]">
-              {t.hero.scroll}
-            </span>
-            <div className="h-8 w-px overflow-hidden bg-white/10">
-              <motion.span
-                className="block h-3 w-px bg-cyan"
-                animate={{ y: [-12, 32] }}
-                transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
-              />
+      <div className="relative z-10 mx-auto mt-14 w-full max-w-6xl px-5 md:px-8">
+        <div className="intro-fade-in" style={d(1.6)}>
+          <div className="flex justify-center">
+            <div className="flex flex-col items-center gap-2 text-muted">
+              <span className="font-mono text-[10px] uppercase tracking-[0.3em]">
+                {t.hero.scroll}
+              </span>
+              <div className="h-8 w-px overflow-hidden bg-white/10">
+                <span className="hero-scroll-bar block h-3 w-px bg-cyan" />
+              </div>
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

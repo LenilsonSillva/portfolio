@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useLang } from "../providers/LanguageContext";
 import { Reveal, SectionKicker } from "../ui/Section";
+import { RevealCSS } from "../ui/RevealCSS";
 import { Icon } from "../ui/Icons";
 import { links } from "@/lib/data";
 import { EASE } from "@/lib/motion";
@@ -20,18 +21,18 @@ export default function PlayHome() {
   const [tab, setTab] = useState("overview");
 
   return (
-    <section id="playhome" className="relative py-24 md:py-32">
+    <section id="playhome" className="relative py-20 md:py-28">
       <div
         aria-hidden
         className="bg-grid absolute inset-0 [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,black,transparent)]"
       />
       <div className="relative mx-auto max-w-6xl px-5 md:px-8">
         {/* Header: 03 — FEATURED PROJECT */}
-        <SectionKicker index={p.index} label={p.kicker} className="mb-6 md:mb-8" />
+        <SectionKicker index={p.index} label={p.kicker} className="mb-8 md:mb-12" />
 
         {/* Icon + PLAYHOME */}
         <div className="flex flex-wrap items-center gap-5 md:gap-7">
-          <Reveal className="relative shrink-0" y={36}>
+          <RevealCSS className="relative shrink-0">
             <div
               aria-hidden
               className="absolute -inset-3 rounded-3xl bg-gradient-to-br from-fuchsia-500/30 to-cyan-400/30 blur-xl"
@@ -41,31 +42,25 @@ export default function PlayHome() {
               alt="PlayHome logo"
               width={112}
               height={112}
-              className="relative h-20 w-20 rounded-2xl border border-white/10 sm:h-24 sm:w-24 md:h-28 md:w-28"
+              className="relative h-16 w-16 rounded-2xl border border-white/10 sm:h-24 sm:w-24 md:h-28 md:w-28"
             />
-          </Reveal>
-          <Reveal delay={0.05} className="min-w-0 flex-1">
+          </RevealCSS>
+          <RevealCSS delay={0.08} className="min-w-0 flex-1">
             <div className="overflow-hidden">
-              <motion.h2
-                initial={{ y: "110%" }}
-                whileInView={{ y: "0%" }}
-                viewport={{ once: true, margin: "-70px" }}
-                transition={{ duration: 0.9, ease: EASE }}
-                className="font-display text-5xl font-bold tracking-tight text-paper sm:text-6xl md:text-7xl"
-              >
+              <h2 className="slide-css font-display text-5xl font-bold tracking-tight text-paper sm:text-6xl md:text-7xl">
                 Play<span className="text-gradient">Home</span>
-              </motion.h2>
+              </h2>
             </div>
             <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.3em] text-muted">
               {p.tagline}
             </p>
-          </Reveal>
-          <Reveal delay={0.1}>
+          </RevealCSS>
+          <RevealCSS delay={0.16}>
             <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-4 py-2 font-mono text-[10px] tracking-widest text-emerald-300 uppercase">
               <span className="animate-pulse-dot h-1.5 w-1.5 rounded-full bg-emerald-400" />
               {p.status}
             </span>
-          </Reveal>
+          </RevealCSS>
         </div>
 
         <Reveal delay={0.1}>

@@ -10,10 +10,10 @@ export default function Journey() {
   const j = t.journey;
 
   return (
-    <section id="journey" className="relative overflow-hidden py-24 md:py-32">
+    <section id="journey" className="relative overflow-hidden py-20 md:py-28">
       <div
         aria-hidden
-        className="absolute top-1/4 left-[-12%] h-[400px] w-[400px] rounded-full bg-violet/10 blur-[130px]"
+        className="absolute top-1/4 left-[-12%] h-72 w-72 rounded-full bg-violet/10 blur-[90px] md:h-[400px] md:w-[400px] md:blur-[130px]"
       />
       <div className="relative mx-auto max-w-6xl px-5 md:px-8">
         <SectionHeader index={j.index} label={j.label} title={j.title} />

@@ -11,10 +11,10 @@ export default function Projects() {
   const u = pr.umesppb;
 
   return (
-    <section id="projects" className="relative overflow-hidden py-24 md:py-32">
+    <section id="projects" className="relative overflow-hidden py-20 md:py-28">
       <div
         aria-hidden
-        className="absolute top-0 right-[-12%] h-[380px] w-[380px] rounded-full bg-cyan/10 blur-[130px]"
+        className="absolute top-0 right-[-12%] h-64 w-64 rounded-full bg-cyan/10 blur-[90px] md:h-[380px] md:w-[380px] md:blur-[130px]"
       />
       <div className="relative mx-auto max-w-6xl px-5 md:px-8">
         <SectionHeader index={pr.index} label={pr.label} title={pr.title} />

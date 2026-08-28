@@ -10,7 +10,7 @@ export default function Education() {
   const e = t.education;
 
   return (
-    <section id="education" className="relative py-24 md:py-32">
+    <section id="education" className="relative py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <SectionHeader index={e.index} label={e.label} title={e.title} />
 
